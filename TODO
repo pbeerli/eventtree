@@ -1,0 +1,15 @@
+Before 1.0
+    check for macos opening  with open -a, or dropping a file on the icon
+ 
+Future
+    unrooted trees
+    other events
+    text rotation
+    zoom
+    fonts
+    better svg support?
+    raster graphics support(png,jpeg,gif etc...)
+    tree editing
+    user specified events
+     
+

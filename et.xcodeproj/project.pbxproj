@@ -1,0 +1,916 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		906540A60BD45217008C35CD /* dcsvg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 906540A50BD45217008C35CD /* dcsvg.cpp */; };
+		906540DF0BD45834008C35CD /* libwx_mac_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 906540DE0BD45834008C35CD /* libwx_mac_static.a */; };
+		906541020BD45AC6008C35CD /* et.icns in Resources */ = {isa = PBXBuildFile; fileRef = 906541010BD45AC6008C35CD /* et.icns */; };
+		90EFD3670BD403D5008AE120 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EFD1540BD402AB008AE120 /* WebKit.framework */; };
+		90EFD3680BD403DC008AE120 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EFD1510BD402AB008AE120 /* AGL.framework */; };
+		90EFD3690BD403DC008AE120 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EFD14F0BD402AB008AE120 /* Carbon.framework */; };
+		90EFD36A0BD403DC008AE120 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EFD1520BD402AB008AE120 /* IOKit.framework */; };
+		90EFD36B0BD403DC008AE120 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EFD1530BD402AB008AE120 /* OpenGL.framework */; };
+		90EFD36C0BD403DC008AE120 /* System.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EFD1500BD402AB008AE120 /* System.framework */; };
+		90EFD36E0BD40408008AE120 /* AboutDialog.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2D40BD40312008AE120 /* AboutDialog.cc */; };
+		90EFD36F0BD40408008AE120 /* AboutDialog.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2D50BD40312008AE120 /* AboutDialog.h */; };
+		90EFD3700BD40408008AE120 /* DnDFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2D60BD40312008AE120 /* DnDFile.cpp */; };
+		90EFD3710BD40408008AE120 /* DnDFile.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2D70BD40312008AE120 /* DnDFile.h */; };
+		90EFD3720BD40408008AE120 /* EpsDC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2D80BD40312008AE120 /* EpsDC.cpp */; };
+		90EFD3730BD40408008AE120 /* EpsDC.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2D90BD40312008AE120 /* EpsDC.h */; };
+		90EFD3740BD40408008AE120 /* etDC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2DA0BD40312008AE120 /* etDC.cpp */; };
+		90EFD3750BD40408008AE120 /* etDC.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2DB0BD40312008AE120 /* etDC.h */; };
+		90EFD3760BD40408008AE120 /* eticon.xpm in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2DC0BD40312008AE120 /* eticon.xpm */; };
+		90EFD3770BD40408008AE120 /* libharu.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3200BD40359008AE120 /* libharu.h */; };
+		90EFD3780BD40408008AE120 /* libharu_cnsfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3170BD40359008AE120 /* libharu_cnsfonts.h */; };
+		90EFD3790BD40408008AE120 /* libharu_cntfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3180BD40359008AE120 /* libharu_cntfonts.h */; };
+		90EFD37A0BD40408008AE120 /* libharu_ISO8859.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3190BD40359008AE120 /* libharu_ISO8859.h */; };
+		90EFD37B0BD40408008AE120 /* libharu_jpeg.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD31A0BD40359008AE120 /* libharu_jpeg.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD37C0BD40408008AE120 /* libharu_jpfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD31B0BD40359008AE120 /* libharu_jpfonts.h */; };
+		90EFD37D0BD40408008AE120 /* libharu_KOI8.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD31C0BD40359008AE120 /* libharu_KOI8.h */; };
+		90EFD37E0BD40408008AE120 /* libharu_krfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD31D0BD40359008AE120 /* libharu_krfonts.h */; };
+		90EFD37F0BD40408008AE120 /* libharu_MSCP.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD31E0BD40359008AE120 /* libharu_MSCP.h */; };
+		90EFD3800BD40408008AE120 /* libharu_png.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD31F0BD40359008AE120 /* libharu_png.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3810BD40408008AE120 /* libharuc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD32C0BD40359008AE120 /* libharuc.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3820BD40408008AE120 /* libharuc.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD32D0BD40359008AE120 /* libharuc.h */; };
+		90EFD3830BD40408008AE120 /* libharuc_cnsfonts.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3210BD40359008AE120 /* libharuc_cnsfonts.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3840BD40408008AE120 /* libharuc_cnsfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3220BD40359008AE120 /* libharuc_cnsfonts.h */; };
+		90EFD3850BD40408008AE120 /* libharuc_cntfonts.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3230BD40359008AE120 /* libharuc_cntfonts.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3860BD40408008AE120 /* libharuc_cntfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3240BD40359008AE120 /* libharuc_cntfonts.h */; };
+		90EFD3870BD40408008AE120 /* libharuc_ISO8859.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3250BD40359008AE120 /* libharuc_ISO8859.h */; };
+		90EFD3880BD40408008AE120 /* libharuc_jpfonts.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3260BD40359008AE120 /* libharuc_jpfonts.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3890BD40408008AE120 /* libharuc_jpfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3270BD40359008AE120 /* libharuc_jpfonts.h */; };
+		90EFD38A0BD40408008AE120 /* libharuc_KOI8.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3280BD40359008AE120 /* libharuc_KOI8.h */; };
+		90EFD38B0BD40408008AE120 /* libharuc_krfonts.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3290BD40359008AE120 /* libharuc_krfonts.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD38C0BD40408008AE120 /* libharuc_krfonts.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD32A0BD40359008AE120 /* libharuc_krfonts.h */; };
+		90EFD38D0BD40408008AE120 /* libharuc_MSCP.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD32B0BD40359008AE120 /* libharuc_MSCP.h */; };
+		90EFD38E0BD40408008AE120 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2DD0BD40312008AE120 /* main.cc */; };
+		90EFD38F0BD40408008AE120 /* MainWindow.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2DE0BD40312008AE120 /* MainWindow.cc */; };
+		90EFD3900BD40408008AE120 /* MainWindow.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2DF0BD40312008AE120 /* MainWindow.h */; };
+		90EFD3910BD40408008AE120 /* ncl.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F40BD40349008AE120 /* ncl.h */; };
+		90EFD3920BD40408008AE120 /* nxsassumptionsblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F50BD40349008AE120 /* nxsassumptionsblock.cpp */; };
+		90EFD3930BD40408008AE120 /* nxsassumptionsblock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F60BD40349008AE120 /* nxsassumptionsblock.h */; };
+		90EFD3940BD40408008AE120 /* nxsblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F70BD40349008AE120 /* nxsblock.cpp */; };
+		90EFD3950BD40408008AE120 /* nxsblock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F80BD40349008AE120 /* nxsblock.h */; };
+		90EFD3960BD40408008AE120 /* nxscharactersblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F90BD40349008AE120 /* nxscharactersblock.cpp */; };
+		90EFD3970BD40408008AE120 /* nxscharactersblock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2FA0BD40349008AE120 /* nxscharactersblock.h */; };
+		90EFD3980BD40408008AE120 /* nxsdatablock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2FB0BD40349008AE120 /* nxsdatablock.cpp */; };
+		90EFD3990BD40408008AE120 /* nxsdatablock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2FC0BD40349008AE120 /* nxsdatablock.h */; };
+		90EFD39A0BD40408008AE120 /* nxsdefs.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2FD0BD40349008AE120 /* nxsdefs.h */; };
+		90EFD39B0BD40408008AE120 /* nxsdiscretedatum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2FE0BD40349008AE120 /* nxsdiscretedatum.cpp */; };
+		90EFD39C0BD40408008AE120 /* nxsdiscretedatum.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2FF0BD40349008AE120 /* nxsdiscretedatum.h */; };
+		90EFD39D0BD40408008AE120 /* nxsdiscretematrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3000BD40349008AE120 /* nxsdiscretematrix.cpp */; };
+		90EFD39E0BD40408008AE120 /* nxsdiscretematrix.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3010BD40349008AE120 /* nxsdiscretematrix.h */; };
+		90EFD39F0BD40408008AE120 /* nxsdistancedatum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3020BD40349008AE120 /* nxsdistancedatum.cpp */; };
+		90EFD3A00BD40408008AE120 /* nxsdistancedatum.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3030BD40349008AE120 /* nxsdistancedatum.h */; };
+		90EFD3A10BD40408008AE120 /* nxsdistancesblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3040BD40349008AE120 /* nxsdistancesblock.cpp */; };
+		90EFD3A20BD40408008AE120 /* nxsdistancesblock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3050BD40349008AE120 /* nxsdistancesblock.h */; };
+		90EFD3A30BD40408008AE120 /* nxsemptyblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3060BD40349008AE120 /* nxsemptyblock.cpp */; };
+		90EFD3A40BD40408008AE120 /* nxsemptyblock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3070BD40349008AE120 /* nxsemptyblock.h */; };
+		90EFD3A50BD40408008AE120 /* nxsexception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3080BD40349008AE120 /* nxsexception.cpp */; };
+		90EFD3A60BD40408008AE120 /* nxsexception.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3090BD40349008AE120 /* nxsexception.h */; };
+		90EFD3A70BD40408008AE120 /* nxsindent.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD30A0BD40349008AE120 /* nxsindent.h */; };
+		90EFD3A80BD40408008AE120 /* nxsreader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD30B0BD40349008AE120 /* nxsreader.cpp */; };
+		90EFD3A90BD40408008AE120 /* nxsreader.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD30C0BD40349008AE120 /* nxsreader.h */; };
+		90EFD3AA0BD40408008AE120 /* nxssetreader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD30D0BD40349008AE120 /* nxssetreader.cpp */; };
+		90EFD3AB0BD40408008AE120 /* nxssetreader.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD30E0BD40349008AE120 /* nxssetreader.h */; };
+		90EFD3AC0BD40408008AE120 /* nxsstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD30F0BD40349008AE120 /* nxsstring.cpp */; };
+		90EFD3AD0BD40408008AE120 /* nxsstring.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3100BD40349008AE120 /* nxsstring.h */; };
+		90EFD3AE0BD40408008AE120 /* nxstaxablock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3110BD40349008AE120 /* nxstaxablock.cpp */; };
+		90EFD3AF0BD40408008AE120 /* nxstaxablock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3120BD40349008AE120 /* nxstaxablock.h */; };
+		90EFD3B00BD40408008AE120 /* nxstoken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3130BD40349008AE120 /* nxstoken.cpp */; };
+		90EFD3B10BD40408008AE120 /* nxstoken.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3140BD40349008AE120 /* nxstoken.h */; };
+		90EFD3B20BD40408008AE120 /* nxstreesblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3150BD40349008AE120 /* nxstreesblock.cpp */; };
+		90EFD3B30BD40408008AE120 /* nxstreesblock.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3160BD40349008AE120 /* nxstreesblock.h */; };
+		90EFD3B40BD40408008AE120 /* PaperOptionsDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E00BD40312008AE120 /* PaperOptionsDialog.cpp */; };
+		90EFD3B50BD40408008AE120 /* PaperOptionsDialog.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E10BD40312008AE120 /* PaperOptionsDialog.h */; };
+		90EFD3B60BD40408008AE120 /* PdfAnnotations.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD32E0BD4036C008AE120 /* PdfAnnotations.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3B70BD40408008AE120 /* PdfAutoPtrObjects.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD32F0BD4036C008AE120 /* PdfAutoPtrObjects.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3B80BD40408008AE120 /* PdfBorderStyle.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3300BD4036C008AE120 /* PdfBorderStyle.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3B90BD40408008AE120 /* PdfCatalog.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3310BD4036C008AE120 /* PdfCatalog.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3BA0BD40408008AE120 /* PdfCMap.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3380BD4036C008AE120 /* PdfCMap.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3BB0BD40408008AE120 /* PdfCMap_ETen_B5.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3320BD4036C008AE120 /* PdfCMap_ETen_B5.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3BC0BD40408008AE120 /* PdfCMap_EUC.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3330BD4036C008AE120 /* PdfCMap_EUC.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3BD0BD40408008AE120 /* PdfCMap_GB_EUC.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3340BD4036C008AE120 /* PdfCMap_GB_EUC.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3BE0BD40408008AE120 /* PdfCMap_KSC_EUC.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3350BD4036C008AE120 /* PdfCMap_KSC_EUC.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3BF0BD40408008AE120 /* PdfCMap_KSCms_UHC.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3360BD4036C008AE120 /* PdfCMap_KSCms_UHC.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C00BD40408008AE120 /* PdfCMap_RKSJ.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3370BD4036C008AE120 /* PdfCMap_RKSJ.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C10BD40408008AE120 /* PdfContents.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3390BD4036C008AE120 /* PdfContents.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C20BD40408008AE120 /* PdfDC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E20BD40312008AE120 /* PdfDC.cpp */; };
+		90EFD3C30BD40408008AE120 /* PdfDC.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E30BD40312008AE120 /* PdfDC.h */; };
+		90EFD3C40BD40408008AE120 /* PdfDestinations.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD33A0BD4036C008AE120 /* PdfDestinations.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C50BD40408008AE120 /* PdfDoc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD33B0BD4036C008AE120 /* PdfDoc.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C60BD40408008AE120 /* PdfEncoding.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD33F0BD4036C008AE120 /* PdfEncoding.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C70BD40408008AE120 /* PdfEncoding_ISO8859.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD33C0BD4036C008AE120 /* PdfEncoding_ISO8859.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C80BD40408008AE120 /* PdfEncoding_KOI8.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD33D0BD4036C008AE120 /* PdfEncoding_KOI8.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3C90BD40408008AE120 /* PdfEncoding_MSCP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD33E0BD4036C008AE120 /* PdfEncoding_MSCP.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3CA0BD40408008AE120 /* PdfEncrypt.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3400BD4036C008AE120 /* PdfEncrypt.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3CB0BD40408008AE120 /* PdfExceptions.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3410BD4036C008AE120 /* PdfExceptions.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3CC0BD40408008AE120 /* PdfFontDef.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3470BD4036C008AE120 /* PdfFontDef.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3CD0BD40408008AE120 /* PdfFontDef_Courier.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3420BD4036C008AE120 /* PdfFontDef_Courier.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3CE0BD40408008AE120 /* PdfFontDef_Helvetica.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3430BD4036C008AE120 /* PdfFontDef_Helvetica.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3CF0BD40408008AE120 /* PdfFontDef_Symbol.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3440BD4036C008AE120 /* PdfFontDef_Symbol.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D00BD40408008AE120 /* PdfFontDef_Times.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3450BD4036C008AE120 /* PdfFontDef_Times.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D10BD40408008AE120 /* PdfFontDef_ZapfDingbats.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3460BD4036C008AE120 /* PdfFontDef_ZapfDingbats.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D20BD40408008AE120 /* PdfFonts.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3480BD4036C008AE120 /* PdfFonts.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D30BD40408008AE120 /* PdfInfo.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3490BD4036C008AE120 /* PdfInfo.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D40BD40408008AE120 /* PdfJpegImage.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD34A0BD4036C008AE120 /* PdfJpegImage.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D50BD40408008AE120 /* PdfList.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD34B0BD4036C008AE120 /* PdfList.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D60BD40408008AE120 /* PdfMbFontDef_Batang.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD34C0BD4036C008AE120 /* PdfMbFontDef_Batang.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D70BD40408008AE120 /* PdfMbFontDef_Dotum.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD34D0BD4036C008AE120 /* PdfMbFontDef_Dotum.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D80BD40408008AE120 /* PdfMbFontDef_Gothic.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD34E0BD4036C008AE120 /* PdfMbFontDef_Gothic.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3D90BD40408008AE120 /* PdfMbFontDef_Mincyo.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD34F0BD4036C008AE120 /* PdfMbFontDef_Mincyo.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3DA0BD40408008AE120 /* PdfMbFontDef_Ming.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3500BD4036C008AE120 /* PdfMbFontDef_Ming.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3DB0BD40408008AE120 /* PdfMbFontDef_SimHei.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3510BD4036C008AE120 /* PdfMbFontDef_SimHei.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3DC0BD40408008AE120 /* PdfMbFontDef_SimSun.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3520BD4036C008AE120 /* PdfMbFontDef_SimSun.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3DD0BD40408008AE120 /* PdfMbFonts.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3530BD4036C008AE120 /* PdfMbFonts.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3DE0BD40408008AE120 /* PdfObjects.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3540BD4036C008AE120 /* PdfObjects.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3DF0BD40408008AE120 /* PdfOutlines.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3550BD4036C008AE120 /* PdfOutlines.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E00BD40408008AE120 /* PdfPages.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3560BD4036C008AE120 /* PdfPages.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E10BD40408008AE120 /* PdfPngImage.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3570BD4036C008AE120 /* PdfPngImage.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E20BD40408008AE120 /* PdfStreams.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3580BD4036C008AE120 /* PdfStreams.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E30BD40408008AE120 /* PdfUnicodeText.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD3590BD4036C008AE120 /* PdfUnicodeText.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E40BD40408008AE120 /* PdfUtils.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD35A0BD4036C008AE120 /* PdfUtils.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E50BD40408008AE120 /* PdfXObjects.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD35B0BD4036C008AE120 /* PdfXObjects.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E60BD40408008AE120 /* PdfXref.cc in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD35C0BD4036C008AE120 /* PdfXref.cc */; settings = {COMPILER_FLAGS = " -DNOJPEG -DNOZLIB -DNOPNG"; }; };
+		90EFD3E70BD40408008AE120 /* printdc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E40BD40312008AE120 /* printdc.cpp */; };
+		90EFD3E80BD40408008AE120 /* printdc.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E50BD40312008AE120 /* printdc.h */; };
+		90EFD3E90BD40408008AE120 /* SvgDC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E60BD40312008AE120 /* SvgDC.cpp */; };
+		90EFD3EA0BD40408008AE120 /* SvgDC.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E70BD40312008AE120 /* SvgDC.h */; };
+		90EFD3EB0BD40408008AE120 /* TreeFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E80BD40312008AE120 /* TreeFileReader.cpp */; };
+		90EFD3EC0BD40409008AE120 /* TreeFileReader.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2E90BD40312008AE120 /* TreeFileReader.h */; };
+		90EFD3ED0BD40409008AE120 /* treelib.c in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2EA0BD40312008AE120 /* treelib.c */; };
+		90EFD3EE0BD40409008AE120 /* treelib.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2EB0BD40312008AE120 /* treelib.h */; };
+		90EFD3EF0BD40409008AE120 /* Treeview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2EC0BD40312008AE120 /* Treeview.cpp */; };
+		90EFD3F00BD40409008AE120 /* Treeview.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2ED0BD40312008AE120 /* Treeview.h */; };
+		90EFD3F10BD40409008AE120 /* WmfDC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2EE0BD40312008AE120 /* WmfDC.cpp */; };
+		90EFD3F20BD40409008AE120 /* WmfDC.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2EF0BD40312008AE120 /* WmfDC.h */; };
+		90EFD3F30BD40409008AE120 /* wxetdc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F00BD40312008AE120 /* wxetdc.cpp */; };
+		90EFD3F40BD40409008AE120 /* wxetdc.h in Sources */ = {isa = PBXBuildFile; fileRef = 90EFD2F10BD40312008AE120 /* wxetdc.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		906540A50BD45217008C35CD /* dcsvg.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = dcsvg.cpp; sourceTree = "<group>"; };
+		906540A70BD4524B008C35CD /* dcsvg.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = dcsvg.h; sourceTree = "<group>"; };
+		906540DE0BD45834008C35CD /* libwx_mac_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwx_mac_static.a; path = "../../wxMac-2.6.4/src/build/Deployment/libwx_mac_static.a"; sourceTree = SOURCE_ROOT; };
+		906541010BD45AC6008C35CD /* et.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = et.icns; sourceTree = "<group>"; };
+		90EFD14F0BD402AB008AE120 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		90EFD1500BD402AB008AE120 /* System.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = System.framework; path = /System/Library/Frameworks/System.framework; sourceTree = "<absolute>"; };
+		90EFD1510BD402AB008AE120 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		90EFD1520BD402AB008AE120 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		90EFD1530BD402AB008AE120 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		90EFD1540BD402AB008AE120 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		90EFD2D00BD402B7008AE120 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = "../../wxMac-2.6.4/samples/minimal/Info.plist"; sourceTree = SOURCE_ROOT; };
+		90EFD2D40BD40312008AE120 /* AboutDialog.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = AboutDialog.cc; path = src/AboutDialog.cc; sourceTree = "<group>"; };
+		90EFD2D50BD40312008AE120 /* AboutDialog.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AboutDialog.h; path = src/AboutDialog.h; sourceTree = "<group>"; };
+		90EFD2D60BD40312008AE120 /* DnDFile.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = DnDFile.cpp; path = src/DnDFile.cpp; sourceTree = "<group>"; };
+		90EFD2D70BD40312008AE120 /* DnDFile.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = DnDFile.h; path = src/DnDFile.h; sourceTree = "<group>"; };
+		90EFD2D80BD40312008AE120 /* EpsDC.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = EpsDC.cpp; path = src/EpsDC.cpp; sourceTree = "<group>"; };
+		90EFD2D90BD40312008AE120 /* EpsDC.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = EpsDC.h; path = src/EpsDC.h; sourceTree = "<group>"; };
+		90EFD2DA0BD40312008AE120 /* etDC.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = etDC.cpp; path = src/etDC.cpp; sourceTree = "<group>"; };
+		90EFD2DB0BD40312008AE120 /* etDC.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = etDC.h; path = src/etDC.h; sourceTree = "<group>"; };
+		90EFD2DC0BD40312008AE120 /* eticon.xpm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = eticon.xpm; path = src/eticon.xpm; sourceTree = "<group>"; };
+		90EFD2DD0BD40312008AE120 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cc; path = src/main.cc; sourceTree = "<group>"; };
+		90EFD2DE0BD40312008AE120 /* MainWindow.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = MainWindow.cc; path = src/MainWindow.cc; sourceTree = "<group>"; };
+		90EFD2DF0BD40312008AE120 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MainWindow.h; path = src/MainWindow.h; sourceTree = "<group>"; };
+		90EFD2E00BD40312008AE120 /* PaperOptionsDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PaperOptionsDialog.cpp; path = src/PaperOptionsDialog.cpp; sourceTree = "<group>"; };
+		90EFD2E10BD40312008AE120 /* PaperOptionsDialog.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PaperOptionsDialog.h; path = src/PaperOptionsDialog.h; sourceTree = "<group>"; };
+		90EFD2E20BD40312008AE120 /* PdfDC.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfDC.cpp; path = src/PdfDC.cpp; sourceTree = "<group>"; };
+		90EFD2E30BD40312008AE120 /* PdfDC.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PdfDC.h; path = src/PdfDC.h; sourceTree = "<group>"; };
+		90EFD2E40BD40312008AE120 /* printdc.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = printdc.cpp; path = src/printdc.cpp; sourceTree = "<group>"; };
+		90EFD2E50BD40312008AE120 /* printdc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = printdc.h; path = src/printdc.h; sourceTree = "<group>"; };
+		90EFD2E60BD40312008AE120 /* SvgDC.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = SvgDC.cpp; path = src/SvgDC.cpp; sourceTree = "<group>"; };
+		90EFD2E70BD40312008AE120 /* SvgDC.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SvgDC.h; path = src/SvgDC.h; sourceTree = "<group>"; };
+		90EFD2E80BD40312008AE120 /* TreeFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = TreeFileReader.cpp; path = src/TreeFileReader.cpp; sourceTree = "<group>"; };
+		90EFD2E90BD40312008AE120 /* TreeFileReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TreeFileReader.h; path = src/TreeFileReader.h; sourceTree = "<group>"; };
+		90EFD2EA0BD40312008AE120 /* treelib.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = treelib.c; path = src/treelib.c; sourceTree = "<group>"; };
+		90EFD2EB0BD40312008AE120 /* treelib.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = treelib.h; path = src/treelib.h; sourceTree = "<group>"; };
+		90EFD2EC0BD40312008AE120 /* Treeview.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Treeview.cpp; path = src/Treeview.cpp; sourceTree = "<group>"; };
+		90EFD2ED0BD40312008AE120 /* Treeview.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Treeview.h; path = src/Treeview.h; sourceTree = "<group>"; };
+		90EFD2EE0BD40312008AE120 /* WmfDC.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = WmfDC.cpp; path = src/WmfDC.cpp; sourceTree = "<group>"; };
+		90EFD2EF0BD40312008AE120 /* WmfDC.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = WmfDC.h; path = src/WmfDC.h; sourceTree = "<group>"; };
+		90EFD2F00BD40312008AE120 /* wxetdc.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = wxetdc.cpp; path = src/wxetdc.cpp; sourceTree = "<group>"; };
+		90EFD2F10BD40312008AE120 /* wxetdc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = wxetdc.h; path = src/wxetdc.h; sourceTree = "<group>"; };
+		90EFD2F40BD40349008AE120 /* ncl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ncl.h; path = src/ncl/ncl.h; sourceTree = "<group>"; };
+		90EFD2F50BD40349008AE120 /* nxsassumptionsblock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsassumptionsblock.cpp; path = src/ncl/nxsassumptionsblock.cpp; sourceTree = "<group>"; };
+		90EFD2F60BD40349008AE120 /* nxsassumptionsblock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsassumptionsblock.h; path = src/ncl/nxsassumptionsblock.h; sourceTree = "<group>"; };
+		90EFD2F70BD40349008AE120 /* nxsblock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsblock.cpp; path = src/ncl/nxsblock.cpp; sourceTree = "<group>"; };
+		90EFD2F80BD40349008AE120 /* nxsblock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsblock.h; path = src/ncl/nxsblock.h; sourceTree = "<group>"; };
+		90EFD2F90BD40349008AE120 /* nxscharactersblock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxscharactersblock.cpp; path = src/ncl/nxscharactersblock.cpp; sourceTree = "<group>"; };
+		90EFD2FA0BD40349008AE120 /* nxscharactersblock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxscharactersblock.h; path = src/ncl/nxscharactersblock.h; sourceTree = "<group>"; };
+		90EFD2FB0BD40349008AE120 /* nxsdatablock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsdatablock.cpp; path = src/ncl/nxsdatablock.cpp; sourceTree = "<group>"; };
+		90EFD2FC0BD40349008AE120 /* nxsdatablock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsdatablock.h; path = src/ncl/nxsdatablock.h; sourceTree = "<group>"; };
+		90EFD2FD0BD40349008AE120 /* nxsdefs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsdefs.h; path = src/ncl/nxsdefs.h; sourceTree = "<group>"; };
+		90EFD2FE0BD40349008AE120 /* nxsdiscretedatum.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsdiscretedatum.cpp; path = src/ncl/nxsdiscretedatum.cpp; sourceTree = "<group>"; };
+		90EFD2FF0BD40349008AE120 /* nxsdiscretedatum.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsdiscretedatum.h; path = src/ncl/nxsdiscretedatum.h; sourceTree = "<group>"; };
+		90EFD3000BD40349008AE120 /* nxsdiscretematrix.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsdiscretematrix.cpp; path = src/ncl/nxsdiscretematrix.cpp; sourceTree = "<group>"; };
+		90EFD3010BD40349008AE120 /* nxsdiscretematrix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsdiscretematrix.h; path = src/ncl/nxsdiscretematrix.h; sourceTree = "<group>"; };
+		90EFD3020BD40349008AE120 /* nxsdistancedatum.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsdistancedatum.cpp; path = src/ncl/nxsdistancedatum.cpp; sourceTree = "<group>"; };
+		90EFD3030BD40349008AE120 /* nxsdistancedatum.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsdistancedatum.h; path = src/ncl/nxsdistancedatum.h; sourceTree = "<group>"; };
+		90EFD3040BD40349008AE120 /* nxsdistancesblock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsdistancesblock.cpp; path = src/ncl/nxsdistancesblock.cpp; sourceTree = "<group>"; };
+		90EFD3050BD40349008AE120 /* nxsdistancesblock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsdistancesblock.h; path = src/ncl/nxsdistancesblock.h; sourceTree = "<group>"; };
+		90EFD3060BD40349008AE120 /* nxsemptyblock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsemptyblock.cpp; path = src/ncl/nxsemptyblock.cpp; sourceTree = "<group>"; };
+		90EFD3070BD40349008AE120 /* nxsemptyblock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsemptyblock.h; path = src/ncl/nxsemptyblock.h; sourceTree = "<group>"; };
+		90EFD3080BD40349008AE120 /* nxsexception.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsexception.cpp; path = src/ncl/nxsexception.cpp; sourceTree = "<group>"; };
+		90EFD3090BD40349008AE120 /* nxsexception.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsexception.h; path = src/ncl/nxsexception.h; sourceTree = "<group>"; };
+		90EFD30A0BD40349008AE120 /* nxsindent.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsindent.h; path = src/ncl/nxsindent.h; sourceTree = "<group>"; };
+		90EFD30B0BD40349008AE120 /* nxsreader.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsreader.cpp; path = src/ncl/nxsreader.cpp; sourceTree = "<group>"; };
+		90EFD30C0BD40349008AE120 /* nxsreader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsreader.h; path = src/ncl/nxsreader.h; sourceTree = "<group>"; };
+		90EFD30D0BD40349008AE120 /* nxssetreader.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxssetreader.cpp; path = src/ncl/nxssetreader.cpp; sourceTree = "<group>"; };
+		90EFD30E0BD40349008AE120 /* nxssetreader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxssetreader.h; path = src/ncl/nxssetreader.h; sourceTree = "<group>"; };
+		90EFD30F0BD40349008AE120 /* nxsstring.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxsstring.cpp; path = src/ncl/nxsstring.cpp; sourceTree = "<group>"; };
+		90EFD3100BD40349008AE120 /* nxsstring.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxsstring.h; path = src/ncl/nxsstring.h; sourceTree = "<group>"; };
+		90EFD3110BD40349008AE120 /* nxstaxablock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxstaxablock.cpp; path = src/ncl/nxstaxablock.cpp; sourceTree = "<group>"; };
+		90EFD3120BD40349008AE120 /* nxstaxablock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxstaxablock.h; path = src/ncl/nxstaxablock.h; sourceTree = "<group>"; };
+		90EFD3130BD40349008AE120 /* nxstoken.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxstoken.cpp; path = src/ncl/nxstoken.cpp; sourceTree = "<group>"; };
+		90EFD3140BD40349008AE120 /* nxstoken.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxstoken.h; path = src/ncl/nxstoken.h; sourceTree = "<group>"; };
+		90EFD3150BD40349008AE120 /* nxstreesblock.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = nxstreesblock.cpp; path = src/ncl/nxstreesblock.cpp; sourceTree = "<group>"; };
+		90EFD3160BD40349008AE120 /* nxstreesblock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = nxstreesblock.h; path = src/ncl/nxstreesblock.h; sourceTree = "<group>"; };
+		90EFD3170BD40359008AE120 /* libharu_cnsfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu_cnsfonts.h; path = src/haru/libharu_cnsfonts.h; sourceTree = "<group>"; };
+		90EFD3180BD40359008AE120 /* libharu_cntfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu_cntfonts.h; path = src/haru/libharu_cntfonts.h; sourceTree = "<group>"; };
+		90EFD3190BD40359008AE120 /* libharu_ISO8859.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu_ISO8859.h; path = src/haru/libharu_ISO8859.h; sourceTree = "<group>"; };
+		90EFD31A0BD40359008AE120 /* libharu_jpeg.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = libharu_jpeg.cc; path = src/haru/libharu_jpeg.cc; sourceTree = "<group>"; };
+		90EFD31B0BD40359008AE120 /* libharu_jpfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu_jpfonts.h; path = src/haru/libharu_jpfonts.h; sourceTree = "<group>"; };
+		90EFD31C0BD40359008AE120 /* libharu_KOI8.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu_KOI8.h; path = src/haru/libharu_KOI8.h; sourceTree = "<group>"; };
+		90EFD31D0BD40359008AE120 /* libharu_krfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu_krfonts.h; path = src/haru/libharu_krfonts.h; sourceTree = "<group>"; };
+		90EFD31E0BD40359008AE120 /* libharu_MSCP.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu_MSCP.h; path = src/haru/libharu_MSCP.h; sourceTree = "<group>"; };
+		90EFD31F0BD40359008AE120 /* libharu_png.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = libharu_png.cc; path = src/haru/libharu_png.cc; sourceTree = "<group>"; };
+		90EFD3200BD40359008AE120 /* libharu.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharu.h; path = src/haru/libharu.h; sourceTree = "<group>"; };
+		90EFD3210BD40359008AE120 /* libharuc_cnsfonts.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = libharuc_cnsfonts.cc; path = src/haru/libharuc_cnsfonts.cc; sourceTree = "<group>"; };
+		90EFD3220BD40359008AE120 /* libharuc_cnsfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc_cnsfonts.h; path = src/haru/libharuc_cnsfonts.h; sourceTree = "<group>"; };
+		90EFD3230BD40359008AE120 /* libharuc_cntfonts.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = libharuc_cntfonts.cc; path = src/haru/libharuc_cntfonts.cc; sourceTree = "<group>"; };
+		90EFD3240BD40359008AE120 /* libharuc_cntfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc_cntfonts.h; path = src/haru/libharuc_cntfonts.h; sourceTree = "<group>"; };
+		90EFD3250BD40359008AE120 /* libharuc_ISO8859.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc_ISO8859.h; path = src/haru/libharuc_ISO8859.h; sourceTree = "<group>"; };
+		90EFD3260BD40359008AE120 /* libharuc_jpfonts.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = libharuc_jpfonts.cc; path = src/haru/libharuc_jpfonts.cc; sourceTree = "<group>"; };
+		90EFD3270BD40359008AE120 /* libharuc_jpfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc_jpfonts.h; path = src/haru/libharuc_jpfonts.h; sourceTree = "<group>"; };
+		90EFD3280BD40359008AE120 /* libharuc_KOI8.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc_KOI8.h; path = src/haru/libharuc_KOI8.h; sourceTree = "<group>"; };
+		90EFD3290BD40359008AE120 /* libharuc_krfonts.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = libharuc_krfonts.cc; path = src/haru/libharuc_krfonts.cc; sourceTree = "<group>"; };
+		90EFD32A0BD40359008AE120 /* libharuc_krfonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc_krfonts.h; path = src/haru/libharuc_krfonts.h; sourceTree = "<group>"; };
+		90EFD32B0BD40359008AE120 /* libharuc_MSCP.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc_MSCP.h; path = src/haru/libharuc_MSCP.h; sourceTree = "<group>"; };
+		90EFD32C0BD40359008AE120 /* libharuc.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = libharuc.cc; path = src/haru/libharuc.cc; sourceTree = "<group>"; };
+		90EFD32D0BD40359008AE120 /* libharuc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = libharuc.h; path = src/haru/libharuc.h; sourceTree = "<group>"; };
+		90EFD32E0BD4036C008AE120 /* PdfAnnotations.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfAnnotations.cc; path = src/haru/PdfAnnotations.cc; sourceTree = "<group>"; };
+		90EFD32F0BD4036C008AE120 /* PdfAutoPtrObjects.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfAutoPtrObjects.cc; path = src/haru/PdfAutoPtrObjects.cc; sourceTree = "<group>"; };
+		90EFD3300BD4036C008AE120 /* PdfBorderStyle.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfBorderStyle.cc; path = src/haru/PdfBorderStyle.cc; sourceTree = "<group>"; };
+		90EFD3310BD4036C008AE120 /* PdfCatalog.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCatalog.cc; path = src/haru/PdfCatalog.cc; sourceTree = "<group>"; };
+		90EFD3320BD4036C008AE120 /* PdfCMap_ETen_B5.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCMap_ETen_B5.cc; path = src/haru/PdfCMap_ETen_B5.cc; sourceTree = "<group>"; };
+		90EFD3330BD4036C008AE120 /* PdfCMap_EUC.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCMap_EUC.cc; path = src/haru/PdfCMap_EUC.cc; sourceTree = "<group>"; };
+		90EFD3340BD4036C008AE120 /* PdfCMap_GB_EUC.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCMap_GB_EUC.cc; path = src/haru/PdfCMap_GB_EUC.cc; sourceTree = "<group>"; };
+		90EFD3350BD4036C008AE120 /* PdfCMap_KSC_EUC.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCMap_KSC_EUC.cc; path = src/haru/PdfCMap_KSC_EUC.cc; sourceTree = "<group>"; };
+		90EFD3360BD4036C008AE120 /* PdfCMap_KSCms_UHC.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCMap_KSCms_UHC.cc; path = src/haru/PdfCMap_KSCms_UHC.cc; sourceTree = "<group>"; };
+		90EFD3370BD4036C008AE120 /* PdfCMap_RKSJ.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCMap_RKSJ.cc; path = src/haru/PdfCMap_RKSJ.cc; sourceTree = "<group>"; };
+		90EFD3380BD4036C008AE120 /* PdfCMap.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfCMap.cc; path = src/haru/PdfCMap.cc; sourceTree = "<group>"; };
+		90EFD3390BD4036C008AE120 /* PdfContents.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfContents.cc; path = src/haru/PdfContents.cc; sourceTree = "<group>"; };
+		90EFD33A0BD4036C008AE120 /* PdfDestinations.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfDestinations.cc; path = src/haru/PdfDestinations.cc; sourceTree = "<group>"; };
+		90EFD33B0BD4036C008AE120 /* PdfDoc.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfDoc.cc; path = src/haru/PdfDoc.cc; sourceTree = "<group>"; };
+		90EFD33C0BD4036C008AE120 /* PdfEncoding_ISO8859.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfEncoding_ISO8859.cc; path = src/haru/PdfEncoding_ISO8859.cc; sourceTree = "<group>"; };
+		90EFD33D0BD4036C008AE120 /* PdfEncoding_KOI8.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfEncoding_KOI8.cc; path = src/haru/PdfEncoding_KOI8.cc; sourceTree = "<group>"; };
+		90EFD33E0BD4036C008AE120 /* PdfEncoding_MSCP.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfEncoding_MSCP.cc; path = src/haru/PdfEncoding_MSCP.cc; sourceTree = "<group>"; };
+		90EFD33F0BD4036C008AE120 /* PdfEncoding.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfEncoding.cc; path = src/haru/PdfEncoding.cc; sourceTree = "<group>"; };
+		90EFD3400BD4036C008AE120 /* PdfEncrypt.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfEncrypt.cc; path = src/haru/PdfEncrypt.cc; sourceTree = "<group>"; };
+		90EFD3410BD4036C008AE120 /* PdfExceptions.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfExceptions.cc; path = src/haru/PdfExceptions.cc; sourceTree = "<group>"; };
+		90EFD3420BD4036C008AE120 /* PdfFontDef_Courier.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfFontDef_Courier.cc; path = src/haru/PdfFontDef_Courier.cc; sourceTree = "<group>"; };
+		90EFD3430BD4036C008AE120 /* PdfFontDef_Helvetica.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfFontDef_Helvetica.cc; path = src/haru/PdfFontDef_Helvetica.cc; sourceTree = "<group>"; };
+		90EFD3440BD4036C008AE120 /* PdfFontDef_Symbol.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfFontDef_Symbol.cc; path = src/haru/PdfFontDef_Symbol.cc; sourceTree = "<group>"; };
+		90EFD3450BD4036C008AE120 /* PdfFontDef_Times.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfFontDef_Times.cc; path = src/haru/PdfFontDef_Times.cc; sourceTree = "<group>"; };
+		90EFD3460BD4036C008AE120 /* PdfFontDef_ZapfDingbats.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfFontDef_ZapfDingbats.cc; path = src/haru/PdfFontDef_ZapfDingbats.cc; sourceTree = "<group>"; };
+		90EFD3470BD4036C008AE120 /* PdfFontDef.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfFontDef.cc; path = src/haru/PdfFontDef.cc; sourceTree = "<group>"; };
+		90EFD3480BD4036C008AE120 /* PdfFonts.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfFonts.cc; path = src/haru/PdfFonts.cc; sourceTree = "<group>"; };
+		90EFD3490BD4036C008AE120 /* PdfInfo.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfInfo.cc; path = src/haru/PdfInfo.cc; sourceTree = "<group>"; };
+		90EFD34A0BD4036C008AE120 /* PdfJpegImage.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfJpegImage.cc; path = src/haru/PdfJpegImage.cc; sourceTree = "<group>"; };
+		90EFD34B0BD4036C008AE120 /* PdfList.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfList.cc; path = src/haru/PdfList.cc; sourceTree = "<group>"; };
+		90EFD34C0BD4036C008AE120 /* PdfMbFontDef_Batang.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFontDef_Batang.cc; path = src/haru/PdfMbFontDef_Batang.cc; sourceTree = "<group>"; };
+		90EFD34D0BD4036C008AE120 /* PdfMbFontDef_Dotum.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFontDef_Dotum.cc; path = src/haru/PdfMbFontDef_Dotum.cc; sourceTree = "<group>"; };
+		90EFD34E0BD4036C008AE120 /* PdfMbFontDef_Gothic.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFontDef_Gothic.cc; path = src/haru/PdfMbFontDef_Gothic.cc; sourceTree = "<group>"; };
+		90EFD34F0BD4036C008AE120 /* PdfMbFontDef_Mincyo.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFontDef_Mincyo.cc; path = src/haru/PdfMbFontDef_Mincyo.cc; sourceTree = "<group>"; };
+		90EFD3500BD4036C008AE120 /* PdfMbFontDef_Ming.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFontDef_Ming.cc; path = src/haru/PdfMbFontDef_Ming.cc; sourceTree = "<group>"; };
+		90EFD3510BD4036C008AE120 /* PdfMbFontDef_SimHei.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFontDef_SimHei.cc; path = src/haru/PdfMbFontDef_SimHei.cc; sourceTree = "<group>"; };
+		90EFD3520BD4036C008AE120 /* PdfMbFontDef_SimSun.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFontDef_SimSun.cc; path = src/haru/PdfMbFontDef_SimSun.cc; sourceTree = "<group>"; };
+		90EFD3530BD4036C008AE120 /* PdfMbFonts.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfMbFonts.cc; path = src/haru/PdfMbFonts.cc; sourceTree = "<group>"; };
+		90EFD3540BD4036C008AE120 /* PdfObjects.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfObjects.cc; path = src/haru/PdfObjects.cc; sourceTree = "<group>"; };
+		90EFD3550BD4036C008AE120 /* PdfOutlines.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfOutlines.cc; path = src/haru/PdfOutlines.cc; sourceTree = "<group>"; };
+		90EFD3560BD4036C008AE120 /* PdfPages.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfPages.cc; path = src/haru/PdfPages.cc; sourceTree = "<group>"; };
+		90EFD3570BD4036C008AE120 /* PdfPngImage.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfPngImage.cc; path = src/haru/PdfPngImage.cc; sourceTree = "<group>"; };
+		90EFD3580BD4036C008AE120 /* PdfStreams.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfStreams.cc; path = src/haru/PdfStreams.cc; sourceTree = "<group>"; };
+		90EFD3590BD4036C008AE120 /* PdfUnicodeText.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfUnicodeText.cc; path = src/haru/PdfUnicodeText.cc; sourceTree = "<group>"; };
+		90EFD35A0BD4036C008AE120 /* PdfUtils.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfUtils.cc; path = src/haru/PdfUtils.cc; sourceTree = "<group>"; };
+		90EFD35B0BD4036C008AE120 /* PdfXObjects.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfXObjects.cc; path = src/haru/PdfXObjects.cc; sourceTree = "<group>"; };
+		90EFD35C0BD4036C008AE120 /* PdfXref.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PdfXref.cc; path = src/haru/PdfXref.cc; sourceTree = "<group>"; };
+		90EFD3610BD403B0008AE120 /* et.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = et.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90EFD3630BD403B0008AE120 /* et-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "et-Info.plist"; sourceTree = "<group>"; };
+		90EFD3FA0BD4043E008AE120 /* config.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90EFD35F0BD403B0008AE120 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				906540DF0BD45834008C35CD /* libwx_mac_static.a in Frameworks */,
+				90EFD3680BD403DC008AE120 /* AGL.framework in Frameworks */,
+				90EFD3690BD403DC008AE120 /* Carbon.framework in Frameworks */,
+				90EFD36A0BD403DC008AE120 /* IOKit.framework in Frameworks */,
+				90EFD36B0BD403DC008AE120 /* OpenGL.framework in Frameworks */,
+				90EFD36C0BD403DC008AE120 /* System.framework in Frameworks */,
+				90EFD3670BD403D5008AE120 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		906540A40BD451BC008C35CD /* wxSVG */ = {
+			isa = PBXGroup;
+			children = (
+				906540A70BD4524B008C35CD /* dcsvg.h */,
+				906540A50BD45217008C35CD /* dcsvg.cpp */,
+			);
+			name = wxSVG;
+			sourceTree = "<group>";
+		};
+		90EFD1380BD40292008AE120 = {
+			isa = PBXGroup;
+			children = (
+				906540DE0BD45834008C35CD /* libwx_mac_static.a */,
+				906540A40BD451BC008C35CD /* wxSVG */,
+				90EFD2D30BD402D9008AE120 /* Sources */,
+				90EFD2D00BD402B7008AE120 /* Info.plist */,
+				90EFD14E0BD402AB008AE120 /* External Frameworks and Libraries */,
+				90EFD14C0BD402A2008AE120 /* Resources */,
+				90EFD2D20BD402C4008AE120 /* Products */,
+				90EFD3630BD403B0008AE120 /* et-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		90EFD14C0BD402A2008AE120 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				906541010BD45AC6008C35CD /* et.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		90EFD14E0BD402AB008AE120 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				90EFD14F0BD402AB008AE120 /* Carbon.framework */,
+				90EFD1500BD402AB008AE120 /* System.framework */,
+				90EFD1510BD402AB008AE120 /* AGL.framework */,
+				90EFD1520BD402AB008AE120 /* IOKit.framework */,
+				90EFD1530BD402AB008AE120 /* OpenGL.framework */,
+				90EFD1540BD402AB008AE120 /* WebKit.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		90EFD2D20BD402C4008AE120 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90EFD3610BD403B0008AE120 /* et.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90EFD2D30BD402D9008AE120 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				90EFD3FA0BD4043E008AE120 /* config.h */,
+				90EFD2F30BD40331008AE120 /* ncl */,
+				90EFD2F20BD4032A008AE120 /* Haru */,
+				90EFD2D40BD40312008AE120 /* AboutDialog.cc */,
+				90EFD2D50BD40312008AE120 /* AboutDialog.h */,
+				90EFD2D60BD40312008AE120 /* DnDFile.cpp */,
+				90EFD2D70BD40312008AE120 /* DnDFile.h */,
+				90EFD2D80BD40312008AE120 /* EpsDC.cpp */,
+				90EFD2D90BD40312008AE120 /* EpsDC.h */,
+				90EFD2DA0BD40312008AE120 /* etDC.cpp */,
+				90EFD2DB0BD40312008AE120 /* etDC.h */,
+				90EFD2DC0BD40312008AE120 /* eticon.xpm */,
+				90EFD2DD0BD40312008AE120 /* main.cc */,
+				90EFD2DE0BD40312008AE120 /* MainWindow.cc */,
+				90EFD2DF0BD40312008AE120 /* MainWindow.h */,
+				90EFD2E00BD40312008AE120 /* PaperOptionsDialog.cpp */,
+				90EFD2E10BD40312008AE120 /* PaperOptionsDialog.h */,
+				90EFD2E20BD40312008AE120 /* PdfDC.cpp */,
+				90EFD2E30BD40312008AE120 /* PdfDC.h */,
+				90EFD2E40BD40312008AE120 /* printdc.cpp */,
+				90EFD2E50BD40312008AE120 /* printdc.h */,
+				90EFD2E60BD40312008AE120 /* SvgDC.cpp */,
+				90EFD2E70BD40312008AE120 /* SvgDC.h */,
+				90EFD2E80BD40312008AE120 /* TreeFileReader.cpp */,
+				90EFD2E90BD40312008AE120 /* TreeFileReader.h */,
+				90EFD2EA0BD40312008AE120 /* treelib.c */,
+				90EFD2EB0BD40312008AE120 /* treelib.h */,
+				90EFD2EC0BD40312008AE120 /* Treeview.cpp */,
+				90EFD2ED0BD40312008AE120 /* Treeview.h */,
+				90EFD2EE0BD40312008AE120 /* WmfDC.cpp */,
+				90EFD2EF0BD40312008AE120 /* WmfDC.h */,
+				90EFD2F00BD40312008AE120 /* wxetdc.cpp */,
+				90EFD2F10BD40312008AE120 /* wxetdc.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		90EFD2F20BD4032A008AE120 /* Haru */ = {
+			isa = PBXGroup;
+			children = (
+				90EFD32E0BD4036C008AE120 /* PdfAnnotations.cc */,
+				90EFD32F0BD4036C008AE120 /* PdfAutoPtrObjects.cc */,
+				90EFD3300BD4036C008AE120 /* PdfBorderStyle.cc */,
+				90EFD3310BD4036C008AE120 /* PdfCatalog.cc */,
+				90EFD3320BD4036C008AE120 /* PdfCMap_ETen_B5.cc */,
+				90EFD3330BD4036C008AE120 /* PdfCMap_EUC.cc */,
+				90EFD3340BD4036C008AE120 /* PdfCMap_GB_EUC.cc */,
+				90EFD3350BD4036C008AE120 /* PdfCMap_KSC_EUC.cc */,
+				90EFD3360BD4036C008AE120 /* PdfCMap_KSCms_UHC.cc */,
+				90EFD3370BD4036C008AE120 /* PdfCMap_RKSJ.cc */,
+				90EFD3380BD4036C008AE120 /* PdfCMap.cc */,
+				90EFD3390BD4036C008AE120 /* PdfContents.cc */,
+				90EFD33A0BD4036C008AE120 /* PdfDestinations.cc */,
+				90EFD33B0BD4036C008AE120 /* PdfDoc.cc */,
+				90EFD33C0BD4036C008AE120 /* PdfEncoding_ISO8859.cc */,
+				90EFD33D0BD4036C008AE120 /* PdfEncoding_KOI8.cc */,
+				90EFD33E0BD4036C008AE120 /* PdfEncoding_MSCP.cc */,
+				90EFD33F0BD4036C008AE120 /* PdfEncoding.cc */,
+				90EFD3400BD4036C008AE120 /* PdfEncrypt.cc */,
+				90EFD3410BD4036C008AE120 /* PdfExceptions.cc */,
+				90EFD3420BD4036C008AE120 /* PdfFontDef_Courier.cc */,
+				90EFD3430BD4036C008AE120 /* PdfFontDef_Helvetica.cc */,
+				90EFD3440BD4036C008AE120 /* PdfFontDef_Symbol.cc */,
+				90EFD3450BD4036C008AE120 /* PdfFontDef_Times.cc */,
+				90EFD3460BD4036C008AE120 /* PdfFontDef_ZapfDingbats.cc */,
+				90EFD3470BD4036C008AE120 /* PdfFontDef.cc */,
+				90EFD3480BD4036C008AE120 /* PdfFonts.cc */,
+				90EFD3490BD4036C008AE120 /* PdfInfo.cc */,
+				90EFD34A0BD4036C008AE120 /* PdfJpegImage.cc */,
+				90EFD34B0BD4036C008AE120 /* PdfList.cc */,
+				90EFD34C0BD4036C008AE120 /* PdfMbFontDef_Batang.cc */,
+				90EFD34D0BD4036C008AE120 /* PdfMbFontDef_Dotum.cc */,
+				90EFD34E0BD4036C008AE120 /* PdfMbFontDef_Gothic.cc */,
+				90EFD34F0BD4036C008AE120 /* PdfMbFontDef_Mincyo.cc */,
+				90EFD3500BD4036C008AE120 /* PdfMbFontDef_Ming.cc */,
+				90EFD3510BD4036C008AE120 /* PdfMbFontDef_SimHei.cc */,
+				90EFD3520BD4036C008AE120 /* PdfMbFontDef_SimSun.cc */,
+				90EFD3530BD4036C008AE120 /* PdfMbFonts.cc */,
+				90EFD3540BD4036C008AE120 /* PdfObjects.cc */,
+				90EFD3550BD4036C008AE120 /* PdfOutlines.cc */,
+				90EFD3560BD4036C008AE120 /* PdfPages.cc */,
+				90EFD3570BD4036C008AE120 /* PdfPngImage.cc */,
+				90EFD3580BD4036C008AE120 /* PdfStreams.cc */,
+				90EFD3590BD4036C008AE120 /* PdfUnicodeText.cc */,
+				90EFD35A0BD4036C008AE120 /* PdfUtils.cc */,
+				90EFD35B0BD4036C008AE120 /* PdfXObjects.cc */,
+				90EFD35C0BD4036C008AE120 /* PdfXref.cc */,
+				90EFD3170BD40359008AE120 /* libharu_cnsfonts.h */,
+				90EFD3180BD40359008AE120 /* libharu_cntfonts.h */,
+				90EFD3190BD40359008AE120 /* libharu_ISO8859.h */,
+				90EFD31A0BD40359008AE120 /* libharu_jpeg.cc */,
+				90EFD31B0BD40359008AE120 /* libharu_jpfonts.h */,
+				90EFD31C0BD40359008AE120 /* libharu_KOI8.h */,
+				90EFD31D0BD40359008AE120 /* libharu_krfonts.h */,
+				90EFD31E0BD40359008AE120 /* libharu_MSCP.h */,
+				90EFD31F0BD40359008AE120 /* libharu_png.cc */,
+				90EFD3200BD40359008AE120 /* libharu.h */,
+				90EFD3210BD40359008AE120 /* libharuc_cnsfonts.cc */,
+				90EFD3220BD40359008AE120 /* libharuc_cnsfonts.h */,
+				90EFD3230BD40359008AE120 /* libharuc_cntfonts.cc */,
+				90EFD3240BD40359008AE120 /* libharuc_cntfonts.h */,
+				90EFD3250BD40359008AE120 /* libharuc_ISO8859.h */,
+				90EFD3260BD40359008AE120 /* libharuc_jpfonts.cc */,
+				90EFD3270BD40359008AE120 /* libharuc_jpfonts.h */,
+				90EFD3280BD40359008AE120 /* libharuc_KOI8.h */,
+				90EFD3290BD40359008AE120 /* libharuc_krfonts.cc */,
+				90EFD32A0BD40359008AE120 /* libharuc_krfonts.h */,
+				90EFD32B0BD40359008AE120 /* libharuc_MSCP.h */,
+				90EFD32C0BD40359008AE120 /* libharuc.cc */,
+				90EFD32D0BD40359008AE120 /* libharuc.h */,
+			);
+			name = Haru;
+			sourceTree = "<group>";
+		};
+		90EFD2F30BD40331008AE120 /* ncl */ = {
+			isa = PBXGroup;
+			children = (
+				90EFD2F40BD40349008AE120 /* ncl.h */,
+				90EFD2F50BD40349008AE120 /* nxsassumptionsblock.cpp */,
+				90EFD2F60BD40349008AE120 /* nxsassumptionsblock.h */,
+				90EFD2F70BD40349008AE120 /* nxsblock.cpp */,
+				90EFD2F80BD40349008AE120 /* nxsblock.h */,
+				90EFD2F90BD40349008AE120 /* nxscharactersblock.cpp */,
+				90EFD2FA0BD40349008AE120 /* nxscharactersblock.h */,
+				90EFD2FB0BD40349008AE120 /* nxsdatablock.cpp */,
+				90EFD2FC0BD40349008AE120 /* nxsdatablock.h */,
+				90EFD2FD0BD40349008AE120 /* nxsdefs.h */,
+				90EFD2FE0BD40349008AE120 /* nxsdiscretedatum.cpp */,
+				90EFD2FF0BD40349008AE120 /* nxsdiscretedatum.h */,
+				90EFD3000BD40349008AE120 /* nxsdiscretematrix.cpp */,
+				90EFD3010BD40349008AE120 /* nxsdiscretematrix.h */,
+				90EFD3020BD40349008AE120 /* nxsdistancedatum.cpp */,
+				90EFD3030BD40349008AE120 /* nxsdistancedatum.h */,
+				90EFD3040BD40349008AE120 /* nxsdistancesblock.cpp */,
+				90EFD3050BD40349008AE120 /* nxsdistancesblock.h */,
+				90EFD3060BD40349008AE120 /* nxsemptyblock.cpp */,
+				90EFD3070BD40349008AE120 /* nxsemptyblock.h */,
+				90EFD3080BD40349008AE120 /* nxsexception.cpp */,
+				90EFD3090BD40349008AE120 /* nxsexception.h */,
+				90EFD30A0BD40349008AE120 /* nxsindent.h */,
+				90EFD30B0BD40349008AE120 /* nxsreader.cpp */,
+				90EFD30C0BD40349008AE120 /* nxsreader.h */,
+				90EFD30D0BD40349008AE120 /* nxssetreader.cpp */,
+				90EFD30E0BD40349008AE120 /* nxssetreader.h */,
+				90EFD30F0BD40349008AE120 /* nxsstring.cpp */,
+				90EFD3100BD40349008AE120 /* nxsstring.h */,
+				90EFD3110BD40349008AE120 /* nxstaxablock.cpp */,
+				90EFD3120BD40349008AE120 /* nxstaxablock.h */,
+				90EFD3130BD40349008AE120 /* nxstoken.cpp */,
+				90EFD3140BD40349008AE120 /* nxstoken.h */,
+				90EFD3150BD40349008AE120 /* nxstreesblock.cpp */,
+				90EFD3160BD40349008AE120 /* nxstreesblock.h */,
+			);
+			name = ncl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90EFD3600BD403B0008AE120 /* et */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90EFD3640BD403B1008AE120 /* Build configuration list for PBXNativeTarget "et" */;
+			buildPhases = (
+				90EFD35D0BD403B0008AE120 /* Resources */,
+				90EFD35E0BD403B0008AE120 /* Sources */,
+				90EFD35F0BD403B0008AE120 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = et;
+			productName = et;
+			productReference = 90EFD3610BD403B0008AE120 /* et.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90EFD13A0BD40292008AE120 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 90EFD13B0BD40292008AE120 /* Build configuration list for PBXProject "et" */;
+			hasScannedForEncodings = 0;
+			mainGroup = 90EFD1380BD40292008AE120;
+			projectDirPath = "";
+			targets = (
+				90EFD3600BD403B0008AE120 /* et */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90EFD35D0BD403B0008AE120 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				906541020BD45AC6008C35CD /* et.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90EFD35E0BD403B0008AE120 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EFD36E0BD40408008AE120 /* AboutDialog.cc in Sources */,
+				90EFD36F0BD40408008AE120 /* AboutDialog.h in Sources */,
+				90EFD3700BD40408008AE120 /* DnDFile.cpp in Sources */,
+				90EFD3710BD40408008AE120 /* DnDFile.h in Sources */,
+				90EFD3720BD40408008AE120 /* EpsDC.cpp in Sources */,
+				90EFD3730BD40408008AE120 /* EpsDC.h in Sources */,
+				90EFD3740BD40408008AE120 /* etDC.cpp in Sources */,
+				90EFD3750BD40408008AE120 /* etDC.h in Sources */,
+				90EFD3760BD40408008AE120 /* eticon.xpm in Sources */,
+				90EFD3770BD40408008AE120 /* libharu.h in Sources */,
+				90EFD3780BD40408008AE120 /* libharu_cnsfonts.h in Sources */,
+				90EFD3790BD40408008AE120 /* libharu_cntfonts.h in Sources */,
+				90EFD37A0BD40408008AE120 /* libharu_ISO8859.h in Sources */,
+				90EFD37B0BD40408008AE120 /* libharu_jpeg.cc in Sources */,
+				90EFD37C0BD40408008AE120 /* libharu_jpfonts.h in Sources */,
+				90EFD37D0BD40408008AE120 /* libharu_KOI8.h in Sources */,
+				90EFD37E0BD40408008AE120 /* libharu_krfonts.h in Sources */,
+				90EFD37F0BD40408008AE120 /* libharu_MSCP.h in Sources */,
+				90EFD3800BD40408008AE120 /* libharu_png.cc in Sources */,
+				90EFD3810BD40408008AE120 /* libharuc.cc in Sources */,
+				90EFD3820BD40408008AE120 /* libharuc.h in Sources */,
+				90EFD3830BD40408008AE120 /* libharuc_cnsfonts.cc in Sources */,
+				90EFD3840BD40408008AE120 /* libharuc_cnsfonts.h in Sources */,
+				90EFD3850BD40408008AE120 /* libharuc_cntfonts.cc in Sources */,
+				90EFD3860BD40408008AE120 /* libharuc_cntfonts.h in Sources */,
+				90EFD3870BD40408008AE120 /* libharuc_ISO8859.h in Sources */,
+				90EFD3880BD40408008AE120 /* libharuc_jpfonts.cc in Sources */,
+				90EFD3890BD40408008AE120 /* libharuc_jpfonts.h in Sources */,
+				90EFD38A0BD40408008AE120 /* libharuc_KOI8.h in Sources */,
+				90EFD38B0BD40408008AE120 /* libharuc_krfonts.cc in Sources */,
+				90EFD38C0BD40408008AE120 /* libharuc_krfonts.h in Sources */,
+				90EFD38D0BD40408008AE120 /* libharuc_MSCP.h in Sources */,
+				90EFD38E0BD40408008AE120 /* main.cc in Sources */,
+				90EFD38F0BD40408008AE120 /* MainWindow.cc in Sources */,
+				90EFD3900BD40408008AE120 /* MainWindow.h in Sources */,
+				90EFD3910BD40408008AE120 /* ncl.h in Sources */,
+				90EFD3920BD40408008AE120 /* nxsassumptionsblock.cpp in Sources */,
+				90EFD3930BD40408008AE120 /* nxsassumptionsblock.h in Sources */,
+				90EFD3940BD40408008AE120 /* nxsblock.cpp in Sources */,
+				90EFD3950BD40408008AE120 /* nxsblock.h in Sources */,
+				90EFD3960BD40408008AE120 /* nxscharactersblock.cpp in Sources */,
+				90EFD3970BD40408008AE120 /* nxscharactersblock.h in Sources */,
+				90EFD3980BD40408008AE120 /* nxsdatablock.cpp in Sources */,
+				90EFD3990BD40408008AE120 /* nxsdatablock.h in Sources */,
+				90EFD39A0BD40408008AE120 /* nxsdefs.h in Sources */,
+				90EFD39B0BD40408008AE120 /* nxsdiscretedatum.cpp in Sources */,
+				90EFD39C0BD40408008AE120 /* nxsdiscretedatum.h in Sources */,
+				90EFD39D0BD40408008AE120 /* nxsdiscretematrix.cpp in Sources */,
+				90EFD39E0BD40408008AE120 /* nxsdiscretematrix.h in Sources */,
+				90EFD39F0BD40408008AE120 /* nxsdistancedatum.cpp in Sources */,
+				90EFD3A00BD40408008AE120 /* nxsdistancedatum.h in Sources */,
+				90EFD3A10BD40408008AE120 /* nxsdistancesblock.cpp in Sources */,
+				90EFD3A20BD40408008AE120 /* nxsdistancesblock.h in Sources */,
+				90EFD3A30BD40408008AE120 /* nxsemptyblock.cpp in Sources */,
+				90EFD3A40BD40408008AE120 /* nxsemptyblock.h in Sources */,
+				90EFD3A50BD40408008AE120 /* nxsexception.cpp in Sources */,
+				90EFD3A60BD40408008AE120 /* nxsexception.h in Sources */,
+				90EFD3A70BD40408008AE120 /* nxsindent.h in Sources */,
+				90EFD3A80BD40408008AE120 /* nxsreader.cpp in Sources */,
+				90EFD3A90BD40408008AE120 /* nxsreader.h in Sources */,
+				90EFD3AA0BD40408008AE120 /* nxssetreader.cpp in Sources */,
+				90EFD3AB0BD40408008AE120 /* nxssetreader.h in Sources */,
+				90EFD3AC0BD40408008AE120 /* nxsstring.cpp in Sources */,
+				90EFD3AD0BD40408008AE120 /* nxsstring.h in Sources */,
+				90EFD3AE0BD40408008AE120 /* nxstaxablock.cpp in Sources */,
+				90EFD3AF0BD40408008AE120 /* nxstaxablock.h in Sources */,
+				90EFD3B00BD40408008AE120 /* nxstoken.cpp in Sources */,
+				90EFD3B10BD40408008AE120 /* nxstoken.h in Sources */,
+				90EFD3B20BD40408008AE120 /* nxstreesblock.cpp in Sources */,
+				90EFD3B30BD40408008AE120 /* nxstreesblock.h in Sources */,
+				90EFD3B40BD40408008AE120 /* PaperOptionsDialog.cpp in Sources */,
+				90EFD3B50BD40408008AE120 /* PaperOptionsDialog.h in Sources */,
+				90EFD3B60BD40408008AE120 /* PdfAnnotations.cc in Sources */,
+				90EFD3B70BD40408008AE120 /* PdfAutoPtrObjects.cc in Sources */,
+				90EFD3B80BD40408008AE120 /* PdfBorderStyle.cc in Sources */,
+				90EFD3B90BD40408008AE120 /* PdfCatalog.cc in Sources */,
+				90EFD3BA0BD40408008AE120 /* PdfCMap.cc in Sources */,
+				90EFD3BB0BD40408008AE120 /* PdfCMap_ETen_B5.cc in Sources */,
+				90EFD3BC0BD40408008AE120 /* PdfCMap_EUC.cc in Sources */,
+				90EFD3BD0BD40408008AE120 /* PdfCMap_GB_EUC.cc in Sources */,
+				90EFD3BE0BD40408008AE120 /* PdfCMap_KSC_EUC.cc in Sources */,
+				90EFD3BF0BD40408008AE120 /* PdfCMap_KSCms_UHC.cc in Sources */,
+				90EFD3C00BD40408008AE120 /* PdfCMap_RKSJ.cc in Sources */,
+				90EFD3C10BD40408008AE120 /* PdfContents.cc in Sources */,
+				90EFD3C20BD40408008AE120 /* PdfDC.cpp in Sources */,
+				90EFD3C30BD40408008AE120 /* PdfDC.h in Sources */,
+				90EFD3C40BD40408008AE120 /* PdfDestinations.cc in Sources */,
+				90EFD3C50BD40408008AE120 /* PdfDoc.cc in Sources */,
+				90EFD3C60BD40408008AE120 /* PdfEncoding.cc in Sources */,
+				90EFD3C70BD40408008AE120 /* PdfEncoding_ISO8859.cc in Sources */,
+				90EFD3C80BD40408008AE120 /* PdfEncoding_KOI8.cc in Sources */,
+				90EFD3C90BD40408008AE120 /* PdfEncoding_MSCP.cc in Sources */,
+				90EFD3CA0BD40408008AE120 /* PdfEncrypt.cc in Sources */,
+				90EFD3CB0BD40408008AE120 /* PdfExceptions.cc in Sources */,
+				90EFD3CC0BD40408008AE120 /* PdfFontDef.cc in Sources */,
+				90EFD3CD0BD40408008AE120 /* PdfFontDef_Courier.cc in Sources */,
+				90EFD3CE0BD40408008AE120 /* PdfFontDef_Helvetica.cc in Sources */,
+				90EFD3CF0BD40408008AE120 /* PdfFontDef_Symbol.cc in Sources */,
+				90EFD3D00BD40408008AE120 /* PdfFontDef_Times.cc in Sources */,
+				90EFD3D10BD40408008AE120 /* PdfFontDef_ZapfDingbats.cc in Sources */,
+				90EFD3D20BD40408008AE120 /* PdfFonts.cc in Sources */,
+				90EFD3D30BD40408008AE120 /* PdfInfo.cc in Sources */,
+				90EFD3D40BD40408008AE120 /* PdfJpegImage.cc in Sources */,
+				90EFD3D50BD40408008AE120 /* PdfList.cc in Sources */,
+				90EFD3D60BD40408008AE120 /* PdfMbFontDef_Batang.cc in Sources */,
+				90EFD3D70BD40408008AE120 /* PdfMbFontDef_Dotum.cc in Sources */,
+				90EFD3D80BD40408008AE120 /* PdfMbFontDef_Gothic.cc in Sources */,
+				90EFD3D90BD40408008AE120 /* PdfMbFontDef_Mincyo.cc in Sources */,
+				90EFD3DA0BD40408008AE120 /* PdfMbFontDef_Ming.cc in Sources */,
+				90EFD3DB0BD40408008AE120 /* PdfMbFontDef_SimHei.cc in Sources */,
+				90EFD3DC0BD40408008AE120 /* PdfMbFontDef_SimSun.cc in Sources */,
+				90EFD3DD0BD40408008AE120 /* PdfMbFonts.cc in Sources */,
+				90EFD3DE0BD40408008AE120 /* PdfObjects.cc in Sources */,
+				90EFD3DF0BD40408008AE120 /* PdfOutlines.cc in Sources */,
+				90EFD3E00BD40408008AE120 /* PdfPages.cc in Sources */,
+				90EFD3E10BD40408008AE120 /* PdfPngImage.cc in Sources */,
+				90EFD3E20BD40408008AE120 /* PdfStreams.cc in Sources */,
+				90EFD3E30BD40408008AE120 /* PdfUnicodeText.cc in Sources */,
+				90EFD3E40BD40408008AE120 /* PdfUtils.cc in Sources */,
+				90EFD3E50BD40408008AE120 /* PdfXObjects.cc in Sources */,
+				90EFD3E60BD40408008AE120 /* PdfXref.cc in Sources */,
+				90EFD3E70BD40408008AE120 /* printdc.cpp in Sources */,
+				90EFD3E80BD40408008AE120 /* printdc.h in Sources */,
+				90EFD3E90BD40408008AE120 /* SvgDC.cpp in Sources */,
+				90EFD3EA0BD40408008AE120 /* SvgDC.h in Sources */,
+				90EFD3EB0BD40408008AE120 /* TreeFileReader.cpp in Sources */,
+				90EFD3EC0BD40409008AE120 /* TreeFileReader.h in Sources */,
+				90EFD3ED0BD40409008AE120 /* treelib.c in Sources */,
+				90EFD3EE0BD40409008AE120 /* treelib.h in Sources */,
+				90EFD3EF0BD40409008AE120 /* Treeview.cpp in Sources */,
+				90EFD3F00BD40409008AE120 /* Treeview.h in Sources */,
+				90EFD3F10BD40409008AE120 /* WmfDC.cpp in Sources */,
+				90EFD3F20BD40409008AE120 /* WmfDC.h in Sources */,
+				90EFD3F30BD40409008AE120 /* wxetdc.cpp in Sources */,
+				90EFD3F40BD40409008AE120 /* wxetdc.h in Sources */,
+				906540A60BD45217008C35CD /* dcsvg.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		90EFD13C0BD40292008AE120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_CONFIG_H,
+					NO_GCC_PRAGMA,
+					NO_GCC_PRAGMA,
+					"wxUSE_BASE=1",
+					"_FILE_OFFSET_BITS=64",
+					_LARGE_FILES,
+					"__WXMAC_XCODE__=1",
+					"WX_PRECOMP=1",
+					MACOS_CLASSIC,
+					__WXMAC__,
+				);
+				HEADER_SEARCH_PATHS = (
+					"/Users/michal/src/wxMac-2.6.4/src/build/include",
+					"/Users/michal/src/wxMac-2.6.4/include",
+					"$(inherited)",
+					.,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
+				PRODUCT_NAME = et;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				USER_HEADER_SEARCH_PATHS = "../wxMac-2.6.4/include ../wxMac-2.6.4/src/build/include  $(inherited) .";
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		90EFD13D0BD40292008AE120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_CONFIG_H,
+					NO_GCC_PRAGMA,
+					NO_GCC_PRAGMA,
+					"wxUSE_BASE=1",
+					"_FILE_OFFSET_BITS=64",
+					_LARGE_FILES,
+					"__WXMAC_XCODE__=1",
+					"WX_PRECOMP=1",
+					MACOS_CLASSIC,
+					__WXMAC__,
+				);
+				HEADER_SEARCH_PATHS = (
+					"/Users/michal/src/wxMac-2.6.4/src/build/include",
+					"/Users/michal/src/wxMac-2.6.4/include",
+					"$(inherited)",
+					.,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
+				PRODUCT_NAME = et;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				USER_HEADER_SEARCH_PATHS = "../wxMac-2.6.4/include ../wxMac-2.6.4/src/build/include  $(inherited) .";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		90EFD3650BD403B1008AE120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_SYMBOL_SEPARATION = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "../../wxMac-2.6.4/include/wx/wxprec.h";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NO_GCC_PRAGMA,
+					NO_GCC_PRAGMA,
+					"wxUSE_BASE=1",
+					"_FILE_OFFSET_BITS=64",
+					_LARGE_FILES,
+					"__WXMAC_XCODE__=1",
+					"WX_PRECOMP=1",
+					MACOS_CLASSIC,
+					__WXMAC__,
+				);
+				INFOPLIST_FILE = "et-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../wxMac-2.6.4/src/build/Deployment\"";
+				OTHER_LDFLAGS = (
+					"-liconv",
+					"-lz",
+				);
+				PRODUCT_NAME = et;
+				USE_SEPARATE_HEADERMAPS = YES;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		90EFD3660BD403B1008AE120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_SYMBOL_SEPARATION = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_CONFIG_H,
+					NO_GCC_PRAGMA,
+					NO_GCC_PRAGMA,
+					"wxUSE_BASE=1",
+					"_FILE_OFFSET_BITS=64",
+					_LARGE_FILES,
+					"__WXMAC_XCODE__=1",
+					"WX_PRECOMP=1",
+					MACOS_CLASSIC,
+					__WXMAC__,
+				);
+				GCC_VERSION_ppc = 3.3;
+				INFOPLIST_FILE = "et-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../wxMac-2.6.4/src/build/Deployment\"";
+				OTHER_LDFLAGS = (
+					"-liconv",
+					"-lz",
+				);
+				PRODUCT_NAME = et;
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_SEPARATE_HEADERMAPS = YES;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90EFD13B0BD40292008AE120 /* Build configuration list for PBXProject "et" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90EFD13C0BD40292008AE120 /* Debug */,
+				90EFD13D0BD40292008AE120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90EFD3640BD403B1008AE120 /* Build configuration list for PBXNativeTarget "et" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90EFD3650BD403B1008AE120 /* Debug */,
+				90EFD3660BD403B1008AE120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90EFD13A0BD40292008AE120 /* Project object */;
+}

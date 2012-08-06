@@ -1,0 +1,43 @@
+#NEXUS 
+
+Begin trees;  [Treefile saved Tue Apr 18 11:38:16 2006]
+[!
+>Data file = /Users/beerli/papers/frogs/migrate-tree/species.nex
+>Branch-and-bound search settings:
+>  Optimality criterion = parsimony
+>    Character-status summary:
+>      Of 1376 total characters:
+>        All characters are of type 'unord'
+>        All characters have equal weight
+>        819 characters are constant
+>        201 variable characters are parsimony-uninformative
+>        Number of parsimony-informative characters = 356
+>    Gaps are treated as "missing"
+>  Initial upper bound: unknown (compute heuristically)
+>  Addition sequence: furthest
+>  Initial 'MaxTrees' setting = 100
+>  Branches collapsed (creating polytomies) if maximum branch length is zero
+>  'MulTrees' option in effect
+>  Topological constraints not enforced
+>  Trees are unrooted
+>
+>Branch-and-bound search completed:
+>   Score of best tree found = 1096
+>   Number of trees retained = 1
+>   Time used = 1 sec (CPU time = 0.09 sec)
+]
+	Translate
+		1 'R. ridibunda (Poland)',
+		2 'R. bedriagae (Anatolia)',
+		3 'R. ridibunda (Greece)',
+		4 'R. cretensis',
+		5 'R. epeirotica',
+		6 'R. sqhiperica',
+		7 'R. saharica',
+		8 'R. perezi',
+		9 'R. nigromaculata',
+		10 'R. lessonae'
+		;
+tree PAUP_1 = [&U] (9:0.385138,(((((1:0.007202,3:0.007368)1.00:0.037308,2:0.036651)1.00 :0.027805,5:0.174950)0.98:0.031376,4:0.081310)0.66:0.032530,(6:0.058419,10:0.053125)1.00:0.088270)1.00:0.118893,(7:0.228024,8:0.124418)0.87:0.040128);
+
+End;
