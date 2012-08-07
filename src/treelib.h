@@ -31,6 +31,12 @@
 extern "C" {
 #endif
 
+#ifndef BOOL
+#define BOOL char
+#endif
+#define TRUE 1
+#define FALSE 0
+    
 typedef struct Node _Node;
 typedef struct Branch _Branch;
 typedef struct Event _Event;
@@ -92,6 +98,8 @@ typedef struct Tree {
 	char* why_not;
 	Node** tips;
 	int n_tips;
+        int n_populations;
+        char** populations;
 } Tree;
 
 typedef struct Point {
@@ -129,9 +137,15 @@ typedef struct Text {
 	Alignment_type halign;
 } Text;
 
+typedef struct Config {
+    BOOL use_symbols;
+} Config;
+
 Tree* get_tree_from_newick(const char*);
 Primitive* get_drawing_from_tree(Tree*);
 Primitive* get_drawing_from_newick(const char*);
+
+
 
 void free_drawing(Primitive*);
 void free_tree(Tree*);

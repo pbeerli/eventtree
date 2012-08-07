@@ -1,7 +1,8 @@
-Before 1.0
-    check for macos opening  with open -a, or dropping a file on the icon
- 
-Future
+    check for macos opening  with open -a, or dropping a file on the icon.
+    figure out how to compile this on windows. It has worked before. 
+
+
+Future ideas 
     unrooted trees
     other events
     text rotation

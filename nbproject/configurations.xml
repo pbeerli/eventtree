@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="82">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="et" root=".">
+      <df name="autom4te.cache">
+      </df>
+      <df name="data">
+      </df>
+      <df name="et.xcodeproj">
+      </df>
+      <df name="src">
+        <df name="et.app">
+          <df name="Contents">
+            <df name="Resources">
+            </df>
+          </df>
+        </df>
+        <df name="haru">
+          <in>PdfAnnotations.cc</in>
+          <in>PdfAutoPtrObjects.cc</in>
+          <in>PdfBorderStyle.cc</in>
+          <in>PdfCMap.cc</in>
+          <in>PdfCMap_ETen_B5.cc</in>
+          <in>PdfCMap_EUC.cc</in>
+          <in>PdfCMap_GB_EUC.cc</in>
+          <in>PdfCMap_KSC_EUC.cc</in>
+          <in>PdfCMap_KSCms_UHC.cc</in>
+          <in>PdfCMap_RKSJ.cc</in>
+          <in>PdfCatalog.cc</in>
+          <in>PdfContents.cc</in>
+          <in>PdfDestinations.cc</in>
+          <in>PdfDoc.cc</in>
+          <in>PdfEncoding.cc</in>
+          <in>PdfEncoding_ISO8859.cc</in>
+          <in>PdfEncoding_KOI8.cc</in>
+          <in>PdfEncoding_MSCP.cc</in>
+          <in>PdfEncrypt.cc</in>
+          <in>PdfExceptions.cc</in>
+          <in>PdfFontDef.cc</in>
+          <in>PdfFontDef_Courier.cc</in>
+          <in>PdfFontDef_Helvetica.cc</in>
+          <in>PdfFontDef_Symbol.cc</in>
+          <in>PdfFontDef_Times.cc</in>
+          <in>PdfFontDef_ZapfDingbats.cc</in>
+          <in>PdfFonts.cc</in>
+          <in>PdfInfo.cc</in>
+          <in>PdfJpegImage.cc</in>
+          <in>PdfList.cc</in>
+          <in>PdfMbFontDef_Batang.cc</in>
+          <in>PdfMbFontDef_Dotum.cc</in>
+          <in>PdfMbFontDef_Gothic.cc</in>
+          <in>PdfMbFontDef_Mincyo.cc</in>
+          <in>PdfMbFontDef_Ming.cc</in>
+          <in>PdfMbFontDef_SimHei.cc</in>
+          <in>PdfMbFontDef_SimSun.cc</in>
+          <in>PdfMbFonts.cc</in>
+          <in>PdfObjects.cc</in>
+          <in>PdfOutlines.cc</in>
+          <in>PdfPages.cc</in>
+          <in>PdfPngImage.cc</in>
+          <in>PdfStreams.cc</in>
+          <in>PdfUnicodeText.cc</in>
+          <in>PdfUtils.cc</in>
+          <in>PdfXObjects.cc</in>
+          <in>PdfXref.cc</in>
+          <in>libharu.h</in>
+          <in>libharu_ISO8859.h</in>
+          <in>libharu_KOI8.h</in>
+          <in>libharu_MSCP.h</in>
+          <in>libharu_cnsfonts.h</in>
+          <in>libharu_cntfonts.h</in>
+          <in>libharu_jpeg.cc</in>
+          <in>libharu_jpfonts.h</in>
+          <in>libharu_krfonts.h</in>
+          <in>libharu_png.cc</in>
+          <in>libharuc.cc</in>
+          <in>libharuc.h</in>
+          <in>libharuc_ISO8859.h</in>
+          <in>libharuc_KOI8.h</in>
+          <in>libharuc_MSCP.h</in>
+          <in>libharuc_cnsfonts.cc</in>
+          <in>libharuc_cnsfonts.h</in>
+          <in>libharuc_cntfonts.cc</in>
+          <in>libharuc_cntfonts.h</in>
+          <in>libharuc_jpfonts.cc</in>
+          <in>libharuc_jpfonts.h</in>
+          <in>libharuc_krfonts.cc</in>
+          <in>libharuc_krfonts.h</in>
+        </df>
+        <df name="ncl">
+          <in>ncl.h</in>
+          <in>nxsassumptionsblock.cpp</in>
+          <in>nxsassumptionsblock.h</in>
+          <in>nxsblock.cpp</in>
+          <in>nxsblock.h</in>
+          <in>nxscharactersblock.cpp</in>
+          <in>nxscharactersblock.h</in>
+          <in>nxsdatablock.cpp</in>
+          <in>nxsdatablock.h</in>
+          <in>nxsdefs.h</in>
+          <in>nxsdiscretedatum.cpp</in>
+          <in>nxsdiscretedatum.h</in>
+          <in>nxsdiscretematrix.cpp</in>
+          <in>nxsdiscretematrix.h</in>
+          <in>nxsdistancedatum.cpp</in>
+          <in>nxsdistancedatum.h</in>
+          <in>nxsdistancesblock.cpp</in>
+          <in>nxsdistancesblock.h</in>
+          <in>nxsemptyblock.cpp</in>
+          <in>nxsemptyblock.h</in>
+          <in>nxsexception.cpp</in>
+          <in>nxsexception.h</in>
+          <in>nxsindent.h</in>
+          <in>nxsreader.cpp</in>
+          <in>nxsreader.h</in>
+          <in>nxssetreader.cpp</in>
+          <in>nxssetreader.h</in>
+          <in>nxsstring.cpp</in>
+          <in>nxsstring.h</in>
+          <in>nxstaxablock.cpp</in>
+          <in>nxstaxablock.h</in>
+          <in>nxstoken.cpp</in>
+          <in>nxstoken.h</in>
+          <in>nxstreesblock.cpp</in>
+          <in>nxstreesblock.h</in>
+        </df>
+        <in>AboutDialog.cc</in>
+        <in>AboutDialog.h</in>
+        <in>DnDFile.cpp</in>
+        <in>DnDFile.h</in>
+        <in>EpsDC.cpp</in>
+        <in>EpsDC.h</in>
+        <in>MainWindow.cc</in>
+        <in>MainWindow.h</in>
+        <in>PaperOptionsDialog.cpp</in>
+        <in>PaperOptionsDialog.h</in>
+        <in>PdfDC.cpp</in>
+        <in>PdfDC.h</in>
+        <in>SvgDC.cpp</in>
+        <in>SvgDC.h</in>
+        <in>TreeFileReader.cpp</in>
+        <in>TreeFileReader.h</in>
+        <in>Treeview.cpp</in>
+        <in>Treeview.h</in>
+        <in>WmfDC.cpp</in>
+        <in>WmfDC.h</in>
+        <in>dcsvg.cpp</in>
+        <in>dcsvg.h</in>
+        <in>etDC.cpp</in>
+        <in>etDC.h</in>
+        <in>eticon.xpm</in>
+        <in>main.cc</in>
+        <in>printdc.cpp</in>
+        <in>printdc.h</in>
+        <in>treelib.c</in>
+        <in>treelib.h</in>
+        <in>wxetdc.cpp</in>
+        <in>wxetdc.h</in>
+      </df>
+      <in>config.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>configure</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>src/et</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>/usr/include/wx-2.8</pElem>
+              <pElem>src</pElem>
+              <pElem>.</pElem>
+              <pElem>/usr/lib64/wx/include/gtk2-unicode-release-2.8</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+              <Elem>_FILE_OFFSET_BITS=64</Elem>
+              <Elem>_LARGE_FILES</Elem>
+              <Elem>_OPENMP=200505</Elem>
+              <Elem>__WXGTK__</Elem>
+            </preprocessorList>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <folder path="et/src/haru">
+        <ccTool>
+          <incDir>
+            <pElem>src/haru</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="et/src/ncl">
+        <ccTool>
+          <incDir>
+            <pElem>src/ncl</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="src/AboutDialog.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>.</pElem>
+            <pElem>/usr/lib64/wx/include/gtk2-unicode-release-2.8</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>NOJPEG</Elem>
+            <Elem>NOPNG</Elem>
+            <Elem>NOZLIB</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_LARGE_FILES</Elem>
+            <Elem>_OPENMP=200505</Elem>
+            <Elem>__WXGTK__</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/DnDFile.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx/generic</pElem>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/wx-2.8/wx/gtk</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/EpsDC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/wx-2.8/wx/gtk</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/MainWindow.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>.</pElem>
+            <pElem>/usr/lib64/wx/include/gtk2-unicode-release-2.8</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>NOJPEG</Elem>
+            <Elem>NOPNG</Elem>
+            <Elem>NOZLIB</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_LARGE_FILES</Elem>
+            <Elem>_OPENMP=200505</Elem>
+            <Elem>__WXGTK__</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/PaperOptionsDialog.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx/generic</pElem>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/wx-2.8/wx/gtk</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/PdfDC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src/haru</pElem>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/wx-2.8/wx/gtk</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/SvgDC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/wx-2.8/wx/gtk</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/TreeFileReader.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>.</pElem>
+            <pElem>/usr/lib64/wx/include/gtk2-unicode-release-2.8</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>NOJPEG</Elem>
+            <Elem>NOPNG</Elem>
+            <Elem>NOZLIB</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_LARGE_FILES</Elem>
+            <Elem>_OPENMP=200505</Elem>
+            <Elem>__WXGTK__</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/Treeview.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>.</pElem>
+            <pElem>/usr/lib64/wx/include/gtk2-unicode-release-2.8</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>NOJPEG</Elem>
+            <Elem>NOPNG</Elem>
+            <Elem>NOZLIB</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_LARGE_FILES</Elem>
+            <Elem>_OPENMP=200505</Elem>
+            <Elem>__WXGTK__</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/WmfDC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/wx-2.8/wx/gtk</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/dcsvg.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="src/dcsvg.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="src/etDC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfAnnotations.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfAutoPtrObjects.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfBorderStyle.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCMap.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCMap_ETen_B5.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCMap_EUC.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCMap_GB_EUC.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCMap_KSC_EUC.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCMap_KSCms_UHC.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCMap_RKSJ.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfCatalog.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfContents.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfDestinations.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfDoc.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfEncoding.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfEncoding_ISO8859.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfEncoding_KOI8.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfEncoding_MSCP.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfEncrypt.cc" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="src/haru/PdfExceptions.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfFontDef.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfFontDef_Courier.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfFontDef_Helvetica.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfFontDef_Symbol.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfFontDef_Times.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfFontDef_ZapfDingbats.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfFonts.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfInfo.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfJpegImage.cc" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="src/haru/PdfList.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFontDef_Batang.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFontDef_Dotum.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFontDef_Gothic.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFontDef_Mincyo.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFontDef_Ming.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFontDef_SimHei.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFontDef_SimSun.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfMbFonts.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfObjects.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfOutlines.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfPages.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfPngImage.cc" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="src/haru/PdfStreams.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfUnicodeText.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfUtils.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfXObjects.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/PdfXref.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/libharu_jpeg.cc" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="src/haru/libharu_png.cc" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="src/haru/libharuc.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/libharuc_cnsfonts.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/libharuc_cntfonts.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/libharuc_jpfonts.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/haru/libharuc_krfonts.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/main.cc" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>.</pElem>
+            <pElem>/usr/lib64/wx/include/gtk2-unicode-release-2.8</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>NOJPEG</Elem>
+            <Elem>NOPNG</Elem>
+            <Elem>NOZLIB</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_LARGE_FILES</Elem>
+            <Elem>_OPENMP=200505</Elem>
+            <Elem>__WXGTK__</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsassumptionsblock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsblock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxscharactersblock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsdatablock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsdiscretedatum.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsdiscretematrix.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsdistancedatum.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsdistancesblock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsemptyblock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsexception.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsreader.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxssetreader.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxsstring.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxstaxablock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxstoken.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/ncl/nxstreesblock.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="src/printdc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/treelib.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+        </cTool>
+      </item>
+      <item path="src/wxetdc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/wx-2.8/wx</pElem>
+            <pElem>/usr/include/wx-2.8</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/wx-2.8/wx/gtk</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -15,4 +15,5 @@ src/et
 src/haru/libharu.a
 src/ncl/libncl.a
 stamp-h1
-
+config.h
+aclocal.m4

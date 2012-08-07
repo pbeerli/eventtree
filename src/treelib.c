@@ -9,6 +9,7 @@
 #include <string.h>
 #include <math.h>
 #include <stdio.h>
+#include <float.h>
 #include "treelib.h"
 
 #define SPECIAL_CHARS "();:,[]&"
@@ -16,8 +17,7 @@
 #define NUMBER_CHARS "-0123456789."
 #define SPECIAL_NUMBERCHAR "e"
 
-#define TRUE 1
-#define FALSE 0
+
 
 typedef enum { CHAR, STRING, NUMBER } Token_type;
 
@@ -272,8 +272,29 @@ static void append_branch_event(Branch * n, Event * evt)
 	cur_event->next = evt;
 }
 
+static void add_population_to_tree(Tree* tree, char* population)
+{
+    int i;
+    
+    if ( population == NULL )
+        return;
+    if ( tree->populations == NULL ) {
+        tree->populations = malloc(sizeof(char*));
+        tree->n_populations = 1;
+        tree->populations[0] = strdup(population);
+    }
+    
+    for ( i = 0 ; i < tree->n_populations ; i++ ) 
+        if ( strcmp(tree->populations[i],population) == 0 ) 
+            return;
+    
+    tree->n_populations++;
+    tree->populations = realloc(tree->populations,sizeof(char*) * tree->n_populations);
+    tree->populations[tree->n_populations-1] = strdup(population);
+}
 
-static Token *parse_migration_event(Token * tokens, Node * cur_node)
+
+static Token *parse_migration_event(Tree* tree, Token * tokens, Node * cur_node)
 {
 	Migration_Event *mevt;
 	Event *evt = get_new_migration_event();
@@ -281,30 +302,35 @@ static Token *parse_migration_event(Token * tokens, Node * cur_node)
 	tokens = tokens->next;
 	evt->type = MIGRATION;
 
-	if (tokens == NULL || tokens->type != STRING) {
-		free_migration_event(evt);
-		return finish_comment(tokens);
-	}
+	if (tokens == NULL || tokens->type != STRING) 
+            goto abort_migration_event;
+        
 	mevt->from = strdup(tokens->data);
 	tokens = tokens->next;
-	if (tokens == NULL || tokens->type != STRING) {
-		free_migration_event(evt);
-		return finish_comment(tokens);
-	}
+	
+        if (tokens == NULL || tokens->type != STRING) 
+            goto abort_migration_event;
+        
 	mevt->to = strdup(tokens->data);
 	tokens = tokens->next;
-	if (tokens == NULL) {
-		free_migration_event(evt);
-		return finish_comment(tokens);
-	}
+	
+        if (tokens == NULL) 
+            goto abort_migration_event;
+        
 	tokens = tokens->next;
-	if (tokens == NULL || tokens->type != NUMBER) {
-		free_migration_event(evt);
-		return finish_comment(tokens);
-	}
+	if (tokens == NULL || tokens->type != NUMBER) 
+            goto abort_migration_event;
+        
 	mevt->v = tokens->fdata;
 	append_branch_event(cur_node->branches[0], evt);
+        add_population_to_tree(tree,mevt->from);
+        add_population_to_tree(tree,mevt->to);
+        
 	return finish_comment(tokens);
+        
+abort_migration_event:
+        free_migration_event(evt);
+        return finish_comment(tokens);
 }
 
 
@@ -333,7 +359,7 @@ static Token *parse_interval_event(Token * tokens, Node * cur_node)
 }
 
 
-static Token *parse_comment(Token * tokens, Node * cur_node)
+static Token *parse_comment(Tree* tree, Token * tokens, Node * cur_node)
 {				/* we expect the first token to be a '[' */
 	tokens = tokens->next;
 	if (tokens == NULL
@@ -343,7 +369,7 @@ static Token *parse_comment(Token * tokens, Node * cur_node)
 	if (tokens->type != STRING)
 		return finish_comment(tokens);
 	if (strcmp(tokens->data, "M") == 0)
-		return parse_migration_event(tokens, cur_node);
+		return parse_migration_event(tree,tokens, cur_node);
 	if (strcmp(tokens->data, "I") == 0)
 		return parse_interval_event(tokens, cur_node);
 
@@ -376,7 +402,13 @@ static int get_ntips_in_sub(Node * n, Branch * b)
 }
 
 
-/** fills in the tree's tips array */
+/**
+ * Recursive sub call of do_tips.  Fills in the trees tips array. 
+ * @param tree
+ * @param n current working node
+ * @param anc ancestor branch
+ * @param i how many tips are already done. 
+ */
 static void do_tipsR(Tree * tree, Node * n, Branch * anc, int *i)
 {
 	int j, has_sub = 0;
@@ -399,6 +431,10 @@ static void do_tipsR(Tree * tree, Node * n, Branch * anc, int *i)
 	}
 }
 
+/**
+ * Fills in the tree's tips array
+ * @param tree 
+ */
 static void do_tips(Tree * tree)
 {
 	int i = 0;
@@ -410,127 +446,139 @@ static void do_tips(Tree * tree)
 }
 
 
-static Tree *parse_tree(Token * tokens)
+Tree* get_new_tree()
 {
-	Token *cur_token = tokens, *old_token;
-	Node *cur_node = NULL;
-	Node *prev_node = NULL;
-	Branch *cur_branch = NULL;
-	int length,label = 0;
-	Tree *t = (Tree *) malloc(sizeof(Tree));
-	t->tips = 0;
-	t->is_valid = 1;
+    Tree* tree = malloc(sizeof(Tree));
+    tree->root = NULL;
+    tree->is_valid = FALSE;
+    tree->why_not = NULL;
+    tree->tips = NULL;
+    tree->n_tips = 0;
+    tree->n_populations = 0;
+    tree->populations = 0;
+}
 
-	if (cur_token == 0) {
-		t->is_valid = 0;
-		t->why_not = "No tree found";
-		return t;
-	}
+static Tree *parse_tree(Token * tokens) {
+    Token *cur_token = tokens, *old_token;
+    Node *cur_node = NULL;
+    Node *prev_node = NULL;
+    Branch *cur_branch = NULL;
+    int length, label = 0;
+    Tree *t = (Tree *) get_new_tree();
+    t->tips = 0;
+    t->is_valid = 1;
 
-	while (cur_token->type == CHAR && cur_token->cdata == '[')
-		cur_token = parse_comment(cur_token, NULL);
-	if (cur_token->type != CHAR && cur_token->cdata != '(') {
-		t->is_valid = 0;
-		t->why_not = "A tree is expected to start with (";
-		return t;
-	}
-	cur_node = t->root = get_new_node();
+    if (cur_token == 0) {
+        t->is_valid = 0;
+        t->why_not = "No tree found";
+        return t;
+    }
 
-	while (cur_token != NULL) {
-		if ( cur_token->type != NUMBER ) length = FALSE;
-		switch (cur_token->type) {
-		case CHAR:
-			switch (cur_token->cdata) {
-			case '(':
-				prev_node = cur_node;
-				cur_node = get_new_node();
-				tree_connect(prev_node, cur_node);
-				cur_token = cur_token->next;
-                label = FALSE;
-				break;
-			case ')':
-				cur_branch = cur_node->branches[0];
-				cur_node =
-				    cur_node->branches[0]->connections[0];
-				cur_token = cur_token->next;
-                label = TRUE;
-				break;
-			case ';':
-				if (cur_node == t->root) 
-					return t;
-				t->is_valid = 0;
-				t->why_not = "Unmatched parenthesis";
-				return t;
+    while (cur_token->type == CHAR && cur_token->cdata == '[')
+        cur_token = parse_comment(t, cur_token, NULL);
+    if (cur_token->type != CHAR && cur_token->cdata != '(') {
+        t->is_valid = 0;
+        t->why_not = "A tree is expected to start with (";
+        return t;
+    }
+    cur_node = t->root = get_new_node();
 
-			case ',':
-				prev_node =
-				    cur_node->branches[0]->connections[0];
-				cur_node = get_new_node();
-				tree_connect(prev_node, cur_node);
-				cur_token = cur_token->next;
-                label = FALSE;
-				break;
-			case '[':
-				old_token = cur_token;
-				cur_token =
-				    parse_comment(cur_token, cur_node);
+    while (cur_token != NULL) {
+        if (cur_token->type != NUMBER) length = FALSE;
+        switch (cur_token->type) {
+            case CHAR:
+                switch (cur_token->cdata) {
+                    case '(':
+                        prev_node = cur_node;
+                        cur_node = get_new_node();
+                        tree_connect(prev_node, cur_node);
+                        cur_token = cur_token->next;
+                        label = FALSE;
+                        break;
+                    case ')':
+                        cur_branch = cur_node->branches[0];
+                        cur_node =
+                                cur_node->branches[0]->connections[0];
+                        cur_token = cur_token->next;
+                        label = TRUE;
+                        break;
+                    case ';':
+                        if (cur_node == t->root)
+                            return t;
+                        t->is_valid = 0;
+                        t->why_not = "Unmatched parenthesis";
+                        return t;
 
-				break;
-			case ']':
-				t->is_valid = 0;
-				t->why_not = "Spurious ]";
-				return t;
-				break;
-			case '&':
-				t->is_valid = 0;
-				t->why_not = "Spurious &";
-				return t;
-			case ':':
-				length = TRUE;
-				cur_token = cur_token->next;
-                label = FALSE;
-				break;
-			}
-			break;
-		case STRING:
-			if (cur_node == NULL) {
-				t->is_valid = 0;
-				t->why_not = "Tree must start with '('";
-				return t;
-			}
-            if ( label ) {
-                Event *evt = get_new_label_event();
-                Label_Event *levt = (Label_Event*)evt->data;
-                levt->label = strdup(cur_token->data);
-                append_branch_event(cur_node->branches[0],evt);
-                cur_token = cur_token->next;
-            }
-            else {
-                cur_node->name = strdup(cur_token->data);
-                cur_token = cur_token->next;
-            }
-			break;
-		case NUMBER:
-			if (length) {
-                if ( cur_node == t->root ) {
-                    cur_node = get_new_node();
-                    tree_connect(cur_node,t->root);
-                    t->root=cur_node; 
+                    case ',':
+                        prev_node =
+                                cur_node->branches[0]->connections[0];
+                        cur_node = get_new_node();
+                        tree_connect(prev_node, cur_node);
+                        cur_token = cur_token->next;
+                        label = FALSE;
+                        break;
+                    case '[':
+                        old_token = cur_token;
+                        cur_token =
+                                parse_comment(t, cur_token, cur_node);
+
+                        break;
+                    case ']':
+                        t->is_valid = 0;
+                        t->why_not = "Spurious ]";
+                        return t;
+                        break;
+                    case '&':
+                        t->is_valid = 0;
+                        t->why_not = "Spurious &";
+                        return t;
+                    case ':':
+                        length = TRUE;
+                        cur_token = cur_token->next;
+                        label = FALSE;
+                        break;
                 }
-				cur_node->branches[0]->length =
-				    cur_token->fdata;
-				length = 0;
-			}
-			cur_token = cur_token->next;
-			break;
-		}
-	}
-	if (cur_node == t->root) 
-		return t;
-	t->is_valid = 0;
-	t->why_not = "Unmatched ( and tree didn't end with ;";
+                break;
+            case STRING:
+                if (cur_node == NULL) {
+                    t->is_valid = 0;
+                    t->why_not = "Tree must start with '('";
+                    return t;
+                }
+                if (label) {
+                    Event *evt = get_new_label_event();
+                    Label_Event *levt = (Label_Event*) evt->data;
+                    levt->label = strdup(cur_token->data);
+                    append_branch_event(cur_node->branches[0], evt);
+                    cur_token = cur_token->next;
+                } else {
+                    cur_node->name = strdup(cur_token->data);
+                    cur_token = cur_token->next;
+                }
+                break;
+            case NUMBER:
+                if (length) {
+                    if (cur_node == t->root) {
+                        cur_node = get_new_node();
+                        tree_connect(cur_node, t->root);
+                        t->root = cur_node;
+                    }
+                    cur_node->branches[0]->length =
+                            cur_token->fdata;
+                    length = 0;
+                }
+                cur_token = cur_token->next;
+                break;
+        }
+    }
+    
+    
+    if (cur_node == t->root)
+        return t;
+    t->is_valid = 0;
+    t->why_not = "Unmatched ( and tree didn't end with ;";
 
-	return t;
+    return t;
 }
 
 
@@ -618,7 +666,7 @@ static Primitive *create_line_primitive(double x1, double y1, double x2,
 	return p;
 }
 
-static Primitive *append(Primitive * p, Primitive * q)
+static Primitive *append_primitive(Primitive * p, Primitive * q)
 {
 	Primitive *r;
 	if (q == NULL)
@@ -774,160 +822,152 @@ static Primitive *get_rectangle(double x1, double y1, double x2, double y2)
     return p;
 }
 
-
 static Primitive *draw_branch_events(Tree * t, Node * n, Branch * anc,
-				     Event * evt, double width, double x)
-{
-	Primitive *p = NULL, *q = NULL;
-	Migration_Event *mevt;
-	Label_Event* levt;
+        Event * evt, double width, double x) {
+    Primitive *p = NULL, *q = NULL;
+    Migration_Event *mevt;
+    Label_Event* levt;
     Interval_Event* ievt;
-	double height;
-	char* pop1, *pop2;
-	Alignment_type a1, a2;
-	double sx;
-    double x1,x2,y1,y2;
+    double height;
+    char* pop1, *pop2;
+    Alignment_type a1, a2;
+    double sx;
+    double x1, x2, y1, y2;
     double length, scale;
-	if (evt == NULL)
-		return NULL;
+    if (evt == NULL)
+        return NULL;
 
-	switch (evt->type) {
-	case MIGRATION:
-		mevt = (Migration_Event *) evt->data;
-		x = x - mevt->v / width;
-		height = 1.0 / 4 / t->n_tips;
-		pop1 = mevt->from;
-		pop2 = mevt->to;
-		if ( strcmp(pop2,pop1) > 0 ) {
-			height = -height;
-			a1 = FROM;
-			a2 = TO;
-		} else {
-			a1 = TO;
-			a2 = FROM;
-		}
-		q = create_arrow_primitive(x, n->coordinates->y + height,
-					   x, n->coordinates->y - height);
-		p = append(p, q);
-		q = create_text_primitive(x, n->coordinates->y + height,
-					  pop1, a1, CENTER);
-		p = append(p, q);
-		q = create_text_primitive(x, n->coordinates->y - height,
-					  pop2, a2, CENTER);
-		p = append(p, q);
-		break;
-	case LABEL:
-		levt = (Label_Event *) evt->data;
-		sx = (anc->connections[0]->coordinates->x + 
-				anc->connections[1]->coordinates->x )/2;
-		height = 1.0 / 4 / t->n_tips;
-		q = create_text_primitive(sx,n->coordinates->y,
-				levt->label, FROM, CENTER);
-		p = append(p, q);
-		break;
-    case INTERVAL: 
-		height = 1.0 / 12 / t->n_tips;
-        ievt = (Interval_Event *) evt->data;
-        length = fabs(anc->connections[0]->coordinates->x - 
-            anc->connections[1]->coordinates->x);
-        if ( anc && is_tip(n) && ievt->to > anc->length ) 
-            scale = length / ievt->to;
-        else 
-            scale = length / anc->length;  
-        x1 = n->coordinates->x + (ievt->from - anc->length)*scale;
-        x2 = n->coordinates->x + (ievt->to - anc->length)*scale;
-        if ( anc && is_tip(n) ) {
-            if ( anc->length > ievt->to )
-                x1 = n->coordinates->x - (anc->length - ievt->from)*scale;
-            else 
-                x1 = n->coordinates->x - (ievt->to - ievt->from)*scale;
-            if ( anc->length > ievt->to )
-                x2 = n->coordinates->x - (anc->length - ievt->to)*scale;
+    switch (evt->type) {
+        case MIGRATION:
+            mevt = (Migration_Event *) evt->data;
+            x = x - mevt->v / width;
+            height = 1.0 / 4 / t->n_tips;
+            pop1 = mevt->from;
+            pop2 = mevt->to;
+            if (strcmp(pop2, pop1) > 0) {
+                height = -height;
+                a1 = FROM;
+                a2 = TO;
+            } else {
+                a1 = TO;
+                a2 = FROM;
+            }
+            q = create_arrow_primitive(x, n->coordinates->y + height,
+                    x, n->coordinates->y - height);
+            p = append_primitive(p, q);
+            q = create_text_primitive(x, n->coordinates->y + height,
+                    pop1, a1, CENTER);
+            p = append_primitive(p, q);
+            q = create_text_primitive(x, n->coordinates->y - height,
+                    pop2, a2, CENTER);
+            p = append_primitive(p, q);
+            break;
+        case LABEL:
+            levt = (Label_Event *) evt->data;
+            sx = (anc->connections[0]->coordinates->x +
+                    anc->connections[1]->coordinates->x) / 2;
+            height = 1.0 / 4 / t->n_tips;
+            q = create_text_primitive(sx, n->coordinates->y,
+                    levt->label, FROM, CENTER);
+            p = append_primitive(p, q);
+            break;
+        case INTERVAL:
+            height = 1.0 / 12 / t->n_tips;
+            ievt = (Interval_Event *) evt->data;
+            length = fabs(anc->connections[0]->coordinates->x -
+                    anc->connections[1]->coordinates->x);
+            if (anc && is_tip(n) && ievt->to > anc->length)
+                scale = length / ievt->to;
             else
-                x2 = n->coordinates->x;
-        }
-        y1 = n->coordinates->y - height;
-        y2 = n->coordinates->y + height;
-        q = get_rectangle(x1,y1,x2,y2);
-        p = append(p, q);
-        break;
-	default:
-		break;
-	}
-	q = draw_branch_events(t, n, anc, evt->next, width, x);
-	p = append(p, q);
-	return p;
+                scale = length / anc->length;
+            x1 = n->coordinates->x + (ievt->from - anc->length) * scale;
+            x2 = n->coordinates->x + (ievt->to - anc->length) * scale;
+            if (anc && is_tip(n)) {
+                if (anc->length > ievt->to)
+                    x1 = n->coordinates->x - (anc->length - ievt->from) * scale;
+                else
+                    x1 = n->coordinates->x - (ievt->to - ievt->from) * scale;
+                if (anc->length > ievt->to)
+                    x2 = n->coordinates->x - (anc->length - ievt->to) * scale;
+                else
+                    x2 = n->coordinates->x;
+            }
+            y1 = n->coordinates->y - height;
+            y2 = n->coordinates->y + height;
+            q = get_rectangle(x1, y1, x2, y2);
+            p = append_primitive(p, q);
+            break;
+        default:
+            break;
+    }
+    q = draw_branch_events(t, n, anc, evt->next, width, x);
+    p = append_primitive(p, q);
+    return p;
 }
 
 
-static Primitive *draw_sub_tree(Tree * t, Node * n, Branch * anc,
-				double width)
-{
-	int subs = count_sub_trees(n, anc);
-	int i, j = 0, did_it = FALSE;
-	Node *child;
-	Primitive *p = NULL, *q = NULL;
-	Node *ancestor;
-	double line_top = 0;
-	double line_bottom = 0;
-    double scale, difference,bigger; 
-    Event* evt;
-	
-    if ( anc != NULL  ) {
-		p = draw_branch_events(t, n, anc, anc->events, width,
-				       n->coordinates->x);
-		if (anc->connections[0] == n)
-			ancestor = anc->connections[1];
-		else
-			ancestor = anc->connections[0];
+static Primitive *draw_sub_tree(Tree *tree, Node *subtree, Branch *ancestor_branch, double width) {
+    int n_subtrees = count_sub_trees(subtree, ancestor_branch);
+    int i, j = 0, did_draw_branch = FALSE;
+    Node *child;
+    Primitive *primitive = NULL;
+    Node *ancestor;
+    double line_top = 0;
+    double line_bottom = 0;
+    double scale, difference, bigger;
+    Event* event;
+
+    if (ancestor_branch != NULL) {
+        primitive = draw_branch_events(tree, subtree, ancestor_branch, ancestor_branch->events, width, subtree->coordinates->x);
+        if (ancestor_branch->connections[0] == subtree)
+            ancestor = ancestor_branch->connections[1];
+        else
+            ancestor = ancestor_branch->connections[0];
     }
-    
-    if ( anc != NULL && is_tip(n) && anc->events ) {
-        for ( evt = anc->events ; evt != NULL && evt->type != INTERVAL 
-                ; evt = evt->next);
-        if ( evt != NULL && evt->type == INTERVAL ) {
-            bigger = ((Interval_Event*)evt->data)->to;
-            if ( bigger < anc->length ) 
-                bigger = anc->length; 
-            scale = (n->coordinates->x - ancestor->coordinates->x) / bigger;
-            difference = ((Interval_Event*)evt->data)->to - anc->length;
-            q = create_line_primitive(ancestor->coordinates->x, 
-                        n->coordinates->y,
-                        ancestor->coordinates->x + (anc->length)*scale,
-                        n->coordinates->y);
-            p = append(p, q);
-            did_it = TRUE;
+
+    if (ancestor_branch != NULL && is_tip(subtree) && ancestor_branch->events) {
+        
+        for (event = ancestor_branch->events; event != NULL && event->type != INTERVAL ; event = event->next);
+        
+        if (event != NULL && event->type == INTERVAL) {
+            bigger = ((Interval_Event*) event->data)->to;
+            if (bigger < ancestor_branch->length)
+                bigger = ancestor_branch->length;
+            scale = (subtree->coordinates->x - ancestor->coordinates->x) / bigger;
+            difference = ((Interval_Event*) event->data)->to - ancestor_branch->length;
+            primitive = append_primitive(primitive,create_line_primitive(ancestor->coordinates->x,
+                    subtree->coordinates->y,
+                    ancestor->coordinates->x + (ancestor_branch->length) * scale,
+                    subtree->coordinates->y));
+            did_draw_branch = TRUE;
         }
     }
-    if (anc != NULL && did_it == FALSE) {
-		q = create_line_primitive(ancestor->coordinates->x,
-					  n->coordinates->y,
-					  n->coordinates->x,
-					  n->coordinates->y);
-		p = append(p, q);
-	}
-	j = 0;
-	for (i = 0; n->branches && n->branches[i] != NULL; i++) {
-		if (n->branches[i] == anc)
-			continue;
-		if (n->branches[i]->connections[0] == n)
-			child = n->branches[i]->connections[1];
-		else
-			child = n->branches[i]->connections[0];
-		if (j == 0)
-			line_top = child->coordinates->y;
-		if (j == subs - 1)
-			line_bottom = child->coordinates->y;
-		q = draw_sub_tree(t, child, n->branches[i], width);
-		p = append(p, q);
-		j++;
-	}
-	if (subs != 0) {
-		q = create_line_primitive(n->coordinates->x, line_top,
-					  n->coordinates->x, line_bottom);
-		p = append(p, q);
-	}
-	return p;
+    if (ancestor_branch != NULL && did_draw_branch == FALSE) {
+        primitive = append_primitive(primitive, create_line_primitive(ancestor->coordinates->x,
+                subtree->coordinates->y,
+                subtree->coordinates->x,
+                subtree->coordinates->y));
+    }
+    j = 0;
+    for (i = 0; subtree->branches && subtree->branches[i] != NULL; i++) {
+        if (subtree->branches[i] == ancestor_branch)
+            continue;
+        if (subtree->branches[i]->connections[0] == subtree)
+            child = subtree->branches[i]->connections[1];
+        else
+            child = subtree->branches[i]->connections[0];
+        if (j == 0)
+            line_top = child->coordinates->y;
+        if (j == n_subtrees - 1)
+            line_bottom = child->coordinates->y;
+        primitive = append_primitive(primitive, draw_sub_tree(tree, child, subtree->branches[i], width));
+        j++;
+    }
+    if (n_subtrees != 0) 
+        primitive = append_primitive(primitive, create_line_primitive(subtree->coordinates->x, line_top,
+                subtree->coordinates->x, line_bottom));
+    
+    return primitive;
 }
 
 /* returns a "nice" width for the scale bar depending on the width of the 
@@ -955,8 +995,8 @@ double get_scale_width(double width)
     double digs = log10(width);
     
     int besti;
-    double bestscore = 10000; /* as shitty number as any, not scale invariant,
-                               but only bad if trees lengths are bigger */
+    double bestscore = INFINITY;
+    
     double sw;
     
     for ( i = -GSW_PASSES ; i <= GSW_PASSES ; i++ ) {
@@ -989,7 +1029,7 @@ double get_scale_width(double width)
 }
 
 
-int scale_on_top(Tree* tree) 
+BOOL scale_on_top(Tree* tree) 
 {
     double highest = 0;
     double lowest = 1;
@@ -1025,17 +1065,17 @@ Primitive* draw_scale(Tree* tree, double width)
     if ( scale_on_top(tree) ) {
         p = create_line_primitive(-1,0,percent-1.0,0);
         q = create_line_primitive(percent-1.0,0,percent-1.0,0.01);
-        p = append(p,q);
+        p = append_primitive(p,q);
         sprintf(buf, "%g",sw);
         q = create_text_primitive(percent-1.0,0.01,buf,TO,CENTER);
-        p = append(p,q);
+        p = append_primitive(p,q);
     } else {
         p = create_line_primitive(-1,1,percent-1.0,1);
         q = create_line_primitive(percent-1.0,1,percent-1.0,0.99);
-        p = append(p,q);
+        p = append_primitive(p,q);
         sprintf(buf, "%g",sw);
         q = create_text_primitive(percent-1.0,0.99,buf,FROM,CENTER);
-        p = append(p,q);
+        p = append_primitive(p,q);
     }
     return p;
 }
@@ -1047,7 +1087,7 @@ Primitive *get_drawing_from_tree(Tree * tree)
 	double width = get_max_depth(tree->root, NULL);
 	calculate_node_coordinates(tree->root, NULL, -1, 1, 0, width);
 	drawing = draw_sub_tree(tree, tree->root, NULL, width);
-    append(drawing, draw_scale(tree, width));
+    append_primitive(drawing, draw_scale(tree, width));
     return drawing;
 }
 
@@ -1086,12 +1126,17 @@ void free_tree_recurs(Node * n, Branch * anc)
 	free(n);
 }
 
-void free_tree(Tree * t)
-{
-	free_tree_recurs(t->root, NULL);
-	if (t->tips)
-		free(t->tips);
-	free(t);
+void free_tree(Tree * t) {
+    int i;
+    free_tree_recurs(t->root, NULL);
+    if (t->tips)
+        free(t->tips);
+    if (t->populations != NULL) {
+        for ( i = 0 ; i < t->n_populations ; i++ )
+            free(t->populations[i]);
+        free(t->populations);
+    }
+    free(t);
 }
 
 void free_drawing(Primitive * d)
