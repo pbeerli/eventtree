@@ -16,7 +16,7 @@ et_SOURCES = \
  printdc.cpp TreeFileReader.cpp treelib.c Treeview.cpp wxetdc.cpp \
  EpsDC.h etDC.h MainWindow.h PaperOptionsDialog.h PdfDC.h printdc.h  \
  TreeFileReader.h treelib.h Treeview.h wxetdc.h WmfDC.h WmfDC.cpp \
- DnDFile.h DnDFile.cpp AboutDialog.cc AboutDialog.h eticon.xpm 
+ DnDFile.h DnDFile.cpp AboutDialog.cc AboutDialog.h eticon.xpm SvgDC.cpp
 
 et_LDFLAGS =
 
