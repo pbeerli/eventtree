@@ -1157,6 +1157,6 @@ void free_drawing(Primitive * d)
 		}
 		old = d;
 		d = d->next;
-		free(d);
+		free(old);
 	}
 }
