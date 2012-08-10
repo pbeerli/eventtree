@@ -105,7 +105,7 @@ PdfObject::WriteEscapeName(PdfStreamBase* stream, const char* text)
             *pos2 = (char)(*pos1 & 0x0f);
             if (*pos2 <= 9)
                 *pos2 += 0x30;
-            else
+            else    
                 *pos2 += 0x41 - 10;
             pos2++;
         } else

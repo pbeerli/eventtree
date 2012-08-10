@@ -17,6 +17,10 @@
 #define NUMBER_CHARS "-0123456789."
 #define SPECIAL_NUMBERCHAR "e"
 
+int n_migration_table = 8;
+static short migration_table[] =  
+{ 0x25A0,0x25A1,0x25A4,0x25A5,0x25A6,0x25A7,0x25A8,0x25A9 };
+
 
 
 typedef enum { CHAR, STRING, NUMBER } Token_type;
@@ -54,69 +58,78 @@ static Token *get_new_token()
 	return thetoken;
 }
 
+static BOOL is_whitespace(char c) 
+{
+    if ( strchr(WHITESPACE_CHARS,c))
+        return TRUE;
+    return FALSE;
+}
+
+static BOOL is_special_char(char c)
+{
+    if ( strchr(SPECIAL_CHARS,c) )
+        return TRUE;
+    return FALSE;
+}
 
 static Token *parse_next_token(const char *newick, int *location,
-			       int strlength, int length)
-{
-	Token *thetoken = get_new_token();
-	char *end, *str;
-	int i, strlen;
+        int strlength, int could_be_length) {
+    Token *thetoken = get_new_token();
+    char *end, *str;
+    int i, strlen;
 
-	if (*location >= strlength)
-		return NULL;
-	while (strchr(WHITESPACE_CHARS, newick[*location])
-	       && *location < strlength)
-		(*location)++;
-	if (*location >= strlength)
-		return NULL;
+    if (*location >= strlength)
+        return NULL;
+    
+    while (is_whitespace(newick[*location]) && *location < strlength)
+        (*location)++;
+    if (*location >= strlength)
+        return NULL;
 
-	if (strchr(SPECIAL_CHARS, newick[*location])) {
-		thetoken->cdata = newick[*location];
-		thetoken->type = CHAR;
-		(*location)++;
-		return thetoken;
-	}
+    if (is_special_char(newick[*location])) {
+        thetoken->cdata = newick[*location];
+        thetoken->type = CHAR;
+        (*location)++;
+        return thetoken;
+    }
 
-	if (strchr(NUMBER_CHARS, newick[*location]) && length) {
-		thetoken->fdata = strtod(newick + *location, &end);
-		*location = end - newick;
-		thetoken->type = NUMBER;
-		return thetoken;
-	}
+    if (strchr(NUMBER_CHARS, newick[*location]) && could_be_length) {
+        thetoken->fdata = strtod(newick + *location, &end);
+        *location = end - newick;
+        thetoken->type = NUMBER;
+        return thetoken;
+    }
 
-	for (i = *location; i < strlength; i++) {
-		if (strchr(SPECIAL_CHARS, newick[i]))
-			break;
-		if (strchr(WHITESPACE_CHARS, newick[i]))
-			break;
-	}
+    for (i = *location; i < strlength; i++) {
+        if ( is_special_char(newick[i]) || is_whitespace(newick[i]))
+            break;
+    }
 
-	strlen = i - *location;
-	str = (char *) malloc(strlen * sizeof(char) + 1);
-	for (i = 0; i < strlen; i++, (*location)++)
-		str[i] = newick[*location];
-	str[i] = 0;
-	thetoken->data = str;
-	thetoken->type = STRING;
-	return thetoken;
+    strlen = i - *location;
+    str = (char *) malloc(strlen * sizeof (char) + 1);
+    for (i = 0; i < strlen; i++, (*location)++)
+        str[i] = newick[*location];
+    str[i] = 0;
+    thetoken->data = str;
+    thetoken->type = STRING;
+    return thetoken;
 }
 
 
-static Token *tokenize(const char *newick)
+static Token *tokenize(const char *newick) 
 {
-	int i = 0, j = 0;
-	int length = strlen(newick);
-	Token *cur_token = NULL;
-	Token *first_token = NULL;
-	first_token = parse_next_token(newick, &i, length, 0);
-	cur_token = first_token;
-	while (cur_token != NULL) {
-		cur_token->next = parse_next_token(newick, &i, length,
-			cur_token->type == CHAR && (cur_token->cdata == ':' )); 
-		cur_token = cur_token->next;
-		j++;
-	}
-	return first_token;
+    int i = 0;
+    int length = strlen(newick);
+    Token *cur_token = NULL;
+    Token *first_token = NULL;
+    first_token = parse_next_token(newick, &i, length, 0);
+    cur_token = first_token;
+    while (cur_token != NULL) {
+        cur_token->next = parse_next_token(newick, &i, length,
+                cur_token->type == CHAR && (cur_token->cdata == ':'));
+        cur_token = cur_token->next;
+    }
+    return first_token;
 }
 
 
@@ -297,7 +310,7 @@ static void add_population_to_tree(Tree* tree, char* population)
 static Token *parse_migration_event(Tree* tree, Token * tokens, Node * cur_node)
 {
 	Migration_Event *mevt;
-	Event *evt = get_new_migration_event();
+     Event *evt = get_new_migration_event();
 	mevt = (Migration_Event *) evt->data;
 	tokens = tokens->next;
 	evt->type = MIGRATION;
@@ -306,7 +319,7 @@ static Token *parse_migration_event(Tree* tree, Token * tokens, Node * cur_node)
             goto abort_migration_event;
         
 	mevt->from = strdup(tokens->data);
-	tokens = tokens->next;
+        tokens = tokens->next;
 	
         if (tokens == NULL || tokens->type != STRING) 
             goto abort_migration_event;
@@ -334,28 +347,27 @@ abort_migration_event:
 }
 
 
-static Token *parse_interval_event(Token * tokens, Node * cur_node)
-{
-	Interval_Event *ievt;
-	Event *evt = get_new_interval_event();
-	ievt = (Interval_Event *) evt->data;
-	tokens = tokens->next;
-	evt->type = INTERVAL;
-	
+static Token *parse_interval_event(Token * tokens, Node * cur_node) {
+    Interval_Event *ievt;
+    Event *evt = get_new_interval_event();
+    ievt = (Interval_Event *) evt->data;
+    tokens = tokens->next;
+    evt->type = INTERVAL;
+
     if (tokens == NULL || tokens->type != STRING) {
-		free_interval_event(evt);
-		return finish_comment(tokens);
-	}
-	ievt->from = atof(tokens->data);
-	tokens = tokens->next;
-	if (tokens == NULL || tokens->type != STRING) {
-		free_interval_event(evt);
-		return finish_comment(tokens);
-	}
-	ievt->to = atof(tokens->data);
-	
+        free_interval_event(evt);
+        return finish_comment(tokens);
+    }
+    ievt->from = atof(tokens->data);
+    tokens = tokens->next;
+    if (tokens == NULL || tokens->type != STRING) {
+        free_interval_event(evt);
+        return finish_comment(tokens);
+    }
+    ievt->to = atof(tokens->data);
+
     append_branch_event(cur_node->branches[0], evt);
-	return finish_comment(tokens);
+    return finish_comment(tokens);
 }
 
 
