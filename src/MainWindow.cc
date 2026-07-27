@@ -247,7 +247,10 @@ void MainWindow::OnFileQuit	(wxCommandEvent& event)
 void MainWindow::OnFileOpen (wxCommandEvent& event)
 {
 	wxFileDialog fd(this);
-	fd.SetStyle(wxOPEN|wxFILE_MUST_EXIST);
+	long styleFD = wxFD_OPEN | wxFD_FILE_MUST_EXIST ; 
+	fd.SetWindowStyle(fd.GetWindowStyle() | styleFD); 
+
+	//fd.SetStyle(wxOPEN|wxFILE_MUST_EXIST);
 	if ( fd.ShowModal() != wxID_OK )
 		return;
 	AddView(fd.GetPath());
@@ -345,7 +348,7 @@ void MainWindow::OnSave(wxCommandEvent& event)
 #ifdef __WXMSW__
 	filetype += _T("|Windows Meta File (*.wmf)|*.wmf");
 #endif
-	wxFileDialog fd(this,_T("Save As"),_T(""),_T(""),filetype,wxSAVE);
+	wxFileDialog fd(this,_T("Save As"),_T(""),_T(""),filetype,wxFD_SAVE);
 	
 	if ( fd.ShowModal() != wxID_OK)
 		return;

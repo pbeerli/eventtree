@@ -22,7 +22,7 @@
 #ifdef __WXMAC_XCODE__
 #include "dcsvg.h"
 #else
-#include <wx/svg/dcsvg.h>
+#include <wx/dcsvg.h>
 #endif
 
 SvgDC::SvgDC(PaperOptionsDialog& pod, wxString file)

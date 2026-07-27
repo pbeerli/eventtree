@@ -17,3 +17,5 @@ src/ncl/libncl.a
 stamp-h1
 config.h
 aclocal.m4
+compile
+.DS_Store
