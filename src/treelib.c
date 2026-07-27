@@ -468,6 +468,7 @@ Tree* get_new_tree()
     tree->n_tips = 0;
     tree->n_populations = 0;
     tree->populations = 0;
+    return tree;
 }
 
 static Tree *parse_tree(Token * tokens) {

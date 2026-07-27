@@ -83,9 +83,24 @@ void TreeFileReader::ReadPhylip()
 	vector<Token> tokens = TokenizePhylip();
 	
 	for (unsigned i = 0 ; i < tokens.size() ; i++ ) {
-		if ( tokens[i].GetType() != Token::CHAR || tokens[i].GetChar() != '(' ) 
+		if ( tokens[i].GetType() != Token::CHAR )
 			continue;
-			
+
+		// comments that sit between the trees, for example migrate's
+		// "[& Locus 3, best ln(L) = -105593.947787 (c=coalescent node, ...) ]"
+		// headers, are skipped completely.  Without this the parenthesis
+		// inside such a comment would be mistaken for the start of a tree.
+		if ( tokens[i].GetChar() == '[' )  {
+			while ( i < tokens.size() &&
+					!(tokens[i].GetType() == Token::CHAR &&
+						tokens[i].GetChar() == ']' ))
+				i++;
+			continue;  // the for loop steps over the ']'
+		}
+
+		if ( tokens[i].GetChar() != '(' )
+			continue;
+
 		int numBraces = 1;
 		i++;
 		string tree = "(";
@@ -143,8 +158,7 @@ vector<Token> TreeFileReader::TokenizePhylip()
 	string curString = "";
 	char c;
 	
-	while ( treefile.eof() == false ) {
-		treefile.get(c);
+	while ( treefile.get(c) ) {
 		string theChar(1,c);
 		if ( specialChars.find(theChar) == string::npos ) 
 			curString += theChar;
