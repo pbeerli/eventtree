@@ -19,3 +19,4 @@ config.h
 aclocal.m4
 compile
 .DS_Store
+src/et.app/Contents/MacOS

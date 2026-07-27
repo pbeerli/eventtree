@@ -21,5 +21,28 @@ et_SOURCES = \
 et_LDFLAGS =
 
 et_LDADD =  \
-        $(WX_LIBS) haru/libharu.a ncl/libncl.a 
+        $(WX_LIBS) haru/libharu.a ncl/libncl.a
+
+
+# On macOS, assemble a double-clickable application bundle around the
+# freshly linked binary.  Info.plist and the icon live in the source
+# tree; only Contents/MacOS/et is generated here.  On other platforms
+# this is a no-op.
+APP_BUNDLE = $(srcdir)/et.app
+
+all-local: bundle
+
+.PHONY: bundle
+bundle: et$(EXEEXT)
+	@case `uname -s` in \
+	Darwin) \
+		echo "  BUNDLE   et.app" ; \
+		$(MKDIR_P) $(APP_BUNDLE)/Contents/MacOS && \
+		cp -f et$(EXEEXT) $(APP_BUNDLE)/Contents/MacOS/et ;; \
+	*) \
+		: ;; \
+	esac
+
+clean-local:
+	rm -rf $(APP_BUNDLE)/Contents/MacOS 
 

@@ -75,19 +75,39 @@ NCL — is bundled.
 make
 ```
 
-The binary is `src/et`; `make install` puts it in `$prefix/bin`. Always run
-`configure` before `make` — the checked-in `Makefile`s carry whatever wxWidgets
-version and architecture they were last configured for.
+`configure`, `Makefile.in` and `aclocal.m4` are not kept in the repository, so a
+fresh clone has to generate them first:
 
-Two things to know if the build fails on a fresh machine:
+```sh
+./autogen.sh
+make
+```
 
+`autogen.sh` runs aclocal/autoheader/automake/autoconf and then `configure`; any
+arguments you give it are passed on to `configure`. Always run `configure`
+before `make` — a `Makefile` left over from an earlier build carries whatever
+wxWidgets version and architecture it was configured for.
+
+The binary is `src/et` and `make install` puts it in `$prefix/bin`. On macOS the
+build also fills in `src/et.app`, a double-clickable bundle wrapping that same
+binary.
+
+Three things to know if the build fails on a fresh machine:
+
+* `aclocal` has to find `wxwin.m4`, which comes with wxWidgets and defines
+  `AM_PATH_WXCONFIG`. It is not always on the default search path — a Homebrew
+  aclocal in `/opt/homebrew` does not look in `/usr/local/share/aclocal`, where
+  a `/usr/local` wxWidgets puts it. `autogen.sh` searches the usual places and
+  passes `-I`; if it reports the file missing, `configure` will die on an
+  undefined `AM_PATH_WXCONFIG`. (`configure.in` uses several constructs that
+  today's autotools consider obsolete, notably `AC_INIT(configure.in)` and
+  `AM_CONFIG_HEADER`. They still work — autoconf 2.73 and automake 1.18 only
+  warn — but the warnings are noisy and can be ignored.)
 * The autotools helper files at the top level (`install-sh`, `missing`,
   `depcomp`, `compile`, `COPYING`, `INSTALL`) are symlinks into an automake
   installation. When the package manager updates automake they dangle and
-  `configure` stops with *cannot find install-sh*; re-point them at the current
-  `share/automake-<version>` directory. Do **not** run `autoreconf` to fix this:
-  `configure.in` still uses macros (`AC_INIT(configure.in)`,
-  `AM_CONFIG_HEADER`) that current autoconf and automake reject.
+  `configure` stops with *cannot find install-sh*; `automake -a`, which
+  `autogen.sh` runs, replaces the missing ones.
 * wxWidgets 3.2 dropped the separate `svg` library — `wxSVGFileDC` now lives in
   core — so `configure.in` asks `wx-config` for `core base xml` only.
 
