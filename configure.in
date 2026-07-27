@@ -14,7 +14,7 @@ AC_PROG_CXX
 AC_PROG_RANLIB
 
 AM_OPTIONS_WXCONFIG
-AM_PATH_WXCONFIG(2.6.0, wxWin=1, wxWin=0, core base xml svg)
+AM_PATH_WXCONFIG(2.6.0, wxWin=1, wxWin=0, core base xml)
      if test "$wxWin" != 1; then
 	AC_MSG_ERROR([
 	   wxWidgets must be installed on your system
